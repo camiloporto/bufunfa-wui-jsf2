@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>Bufunfa.com</title>
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		#container {
+			clear: both;
+			margin: 0 auto;
+			background: #fff;
+			width: 1000px;
+		}
+		#topo {
+			background: rgb(200, 200, 0);
+			height: 50px;
+		}
+		#topo-inner {
+			position: relative;
+			width: 1000px;
+			margin: 0 auto;
+		}
+		#topo-logo {
+			float: left;
+		}
+		#topo-logo h1 {
+			margin: 0;
+		}
+		#topo-userInfo {
+			float: right;
+		}
+		#main {
+			background: #abc;
+		}
+		#footer {
+			text-align: center;
+			padding-top: 10px;
+		}
+		#main-esquerda {
+			float: left;
+			width: 180px;
+		}
+		
+		#menu {
+			margin: 0;
+			padding: 0;
+			width: 180px;
+		}
+		
+		#menu ul {
+			list-style: none;
+		}
+		
+		#menu li a {
+			height: 16px;
+			text-decoration: none;
+		}
+		
+		#menu li a:link, #menu li a:visited {
+			color: rgb(150, 150, 0);
+			display: block;
+			padding: 8px 0 0 30px;
+		}
+		
+		#menu li a:hover {
+			color: rgb(150, 150, 0);
+			background: rgb(200, 200, 0);
+			padding: 8px 0 0 30px;
+		}
+		
+		#main-direita {
+			border-left: solid 2px rgb(200, 200, 0);
+			border-bottom: solid 2px rgb(200, 200, 0);
+			padding-left: 10px;
+			margin-left: 0px;
+			padding-bottom: 15px;
+			float: left;
+		}
+		.tituloPagina {
+			border-bottom: dashed 1px rgb(200, 200, 0);
+			padding-right: 350px;
+			padding-bottom: 15px;
+		}
+		#footer {
+			clear: both;
+		}
+	</style>
+</h:head>
+<h:body>
+	<div id="topo">
+		<div id="topo-inner">
+			<div id="topo-logo"><h1>Bufunfa.com</h1></div>
+			<div id="topo-userInfo">
+				<h:outputText value=" camiloporto@gmail.com" />
+				<h:outputText value="perfil | " />
+			</div>
+		</div>
+	</div>
+	<div id="container">
+		<div id="main">
+			<div id="main-esquerda">
+				<div id="menu">
+					<ul>
+						<li><a href="#">Contas</a></li>
+						<li><a href="#">Menu 02</a></li>
+						<li><a href="#">Menu 03</a></li>
+						<li><a href="#">Menu 04</a></li>
+						<li><a href="#">Menu 05</a></li>
+					</ul>
+				</div>
+			</div>
+			<div id="main-direita">
+				<ui:insert name="pageTitle">
+					<h1 class="tituloPagina">#{pageTitle}</h1>
+				</ui:insert>
+				<ui:insert name="pageContent">
+					<h:outputText value="Conteudo da Pagina Aqui" />
+				</ui:insert>
+			</div>
+		</div>
+		<div id="footer">
+			© 2011
+		</div>
+	</div>
+</h:body>
+</html>
