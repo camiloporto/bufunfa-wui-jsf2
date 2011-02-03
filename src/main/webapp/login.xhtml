@@ -63,11 +63,11 @@
 			<div id="topo-loginForm">
 				<h:form id="loginForm" prependId="false">
 					<label>email:</label>
-					<h:inputText value="email" />
+					<h:inputText value="#{loginView.usuario.email}" />
 					
 					<label>senha:</label>
-					<h:inputSecret value="nome" />
-					<h:commandButton action="login" value="Login" />
+					<h:inputSecret value="#{loginView.usuario.senha}" />
+					<h:commandButton action="#{loginView.login}" value="Login" />
 				</h:form>
 			</div>
 		</div>

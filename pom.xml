@@ -11,7 +11,10 @@
 		<spring.version>3.0.2.RELEASE</spring.version>
 		<aspectj.version>1.6.9.M2</aspectj.version>
 		<slf4j.version>1.6.0</slf4j.version>
-	</properties>
+	<gae.version>1.3.4</gae.version>
+    <gae.home>${user.home}/.m2/repository/com/google/appengine/appengine-java-sdk/${gae.version}/appengine-java-sdk-${gae.version}</gae.home>
+    <datanucleus.version>1.1.6</datanucleus.version>
+    </properties>
 	<repositories>
 		<repository>  
 		  <id>maven2-repository.dev.java.net</id>  
@@ -40,7 +43,22 @@
 			<name>Springframework Maven MILESTONE Repository</name>
 			<url>http://maven.springframework.org/milestone</url>
 		</repository>
-	</repositories>
+	<repository>
+            <id>maven-gae-plugin-repo</id>
+            <url>http://maven-gae-plugin.googlecode.com/svn/repository</url>
+            <name>maven-gae-plugin repository</name>
+        </repository>
+    <repository>
+            <id>DataNucleus_2</id>
+            <url>http://www.datanucleus.org/downloads/maven2/</url>
+            <name>DataNucleus</name>
+        </repository>
+    <repository>
+            <id>JBoss Repo</id>
+            <url>http://repository.jboss.com/maven2</url>
+            <name>JBoss Repo</name>
+        </repository>
+    </repositories>
 	<pluginRepositories>
 		<pluginRepository>
 			<id>com.springsource.repository.bundles.release</id>
@@ -65,38 +83,66 @@
 			<name>Springframework Maven MILESTONE Repository</name>
 			<url>http://maven.springframework.org/milestone</url>
 		</pluginRepository>
-	</pluginRepositories>
+	<pluginRepository>
+            <id>maven-gae-plugin-repo</id>
+            <url>http://maven-gae-plugin.googlecode.com/svn/repository</url>
+            <name>maven-gae-plugin repository</name>
+        </pluginRepository>
+    <pluginRepository>
+            <id>DataNucleus_2</id>
+            <url>http://www.datanucleus.org/downloads/maven2/</url>
+        </pluginRepository>
+    </pluginRepositories>
 	<dependencies>
-		<!-- Dependencias para a camada WUI -->
-		<dependency>
+        <!-- Dependencias para a camada WUI -->
+        <dependency>
+	        <groupId>com.sun.faces</groupId>
+	        <artifactId>jsf-api</artifactId>
+	        <version>2.1.0-b11</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>com.sun.faces</groupId>
+	        <artifactId>jsf-impl</artifactId>
+	        <version>2.1.0-b11</version>
+	    </dependency>
+	    <dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+	    <!-- 
+        <dependency>
 			<groupId>com.sun.faces</groupId>
 			<artifactId>jsf-api</artifactId>
-			<version>2.0.0-b13</version>
+			<version>2.1.0-b11</version>
 		</dependency>
-		<dependency>
+        <dependency>
 			<groupId>com.sun.faces</groupId>
 			<artifactId>jsf-impl</artifactId>
-			<version>2.0.0-b13</version>
+			<version>2.1.0-b11</version>
 		</dependency>
+		 -->
+		<!-- 
 		<dependency>  
 		    <groupId>javax.servlet</groupId>  
 		    <artifactId>jstl</artifactId>  
 		    <version>1.2</version>  
-		</dependency> 
-		<dependency>  
+		</dependency>
+		 -->
+        <dependency>  
 		    <groupId>org.primefaces</groupId>  
 		    <artifactId>primefaces</artifactId>  
 		    <version>2.2.RC2</version>  
 		</dependency>
-		<!-- FIM -->
-		<!-- General dependencies for standard applications -->
-		<dependency>
+        <!-- FIM -->
+        <!-- General dependencies for standard applications -->
+        <dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.8.1</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
+        <dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.15</version>
@@ -120,41 +166,41 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		<dependency>
+        <dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>${slf4j.version}</version>
 		</dependency>
-		<dependency>
+        <dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>jcl-over-slf4j</artifactId>
 			<version>${slf4j.version}</version>
 		</dependency>
-		<dependency>
+        <dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>${slf4j.version}</version>
 		</dependency>
-		<dependency>
+        <dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjrt</artifactId>
 			<version>${aspectj.version}</version>
 		</dependency>
-		<dependency>
+        <dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
 			<version>2.5</version>
 			<scope>provided</scope>
 		</dependency>
-		<!-- ROO dependencies -->
-		<dependency>
+        <!-- ROO dependencies -->
+        <dependency>
 			<groupId>org.springframework.roo</groupId>
 			<artifactId>org.springframework.roo.annotations</artifactId>
 			<version>${roo.version}</version>
 			<scope>provided</scope>
 		</dependency>
-		<!-- Spring dependencies -->
-		<dependency>
+        <!-- Spring dependencies -->
+        <dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
 			<version>${spring.version}</version>
@@ -165,7 +211,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		<dependency>
+        <dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 			<version>${spring.version}</version>
@@ -177,30 +223,156 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		<dependency>
+        <dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		<dependency>
+        <dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aop</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		<dependency>
+        <dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aspects</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		<dependency>
+        <dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-tx</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>persistence-api</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.datanucleus</groupId>
+            <artifactId>datanucleus-core</artifactId>
+            <version>${datanucleus.version}</version>
+            <scope>runtime</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>javax.transaction</groupId>
+                    <artifactId>transaction-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.datanucleus</groupId>
+            <artifactId>datanucleus-jpa</artifactId>
+            <version>1.1.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.datanucleus</groupId>
+            <artifactId>datanucleus-rdbms</artifactId>
+            <version>${datanucleus.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.datanucleus</groupId>
+            <artifactId>datanucleus-enhancer</artifactId>
+            <version>1.1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.jdo</groupId>
+            <artifactId>jdo2-api</artifactId>
+            <version>2.3-eb</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>javax.transaction</groupId>
+                    <artifactId>transaction-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>4.0.2.GA</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>javax.xml.bind</groupId>
+                    <artifactId>jaxb-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.sun.xml.bind</groupId>
+                    <artifactId>jaxb-impl</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>1.0.0.GA</version>
+        </dependency>
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib-nodep</artifactId>
+            <version>2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.transaction</groupId>
+            <artifactId>jta</artifactId>
+            <version>1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-pool</groupId>
+            <artifactId>commons-pool</artifactId>
+            <version>1.5.4</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>1.3</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>commons-pool</groupId>
+                    <artifactId>commons-pool</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>xerces</groupId>
+                    <artifactId>xerces</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>xerces</groupId>
+                    <artifactId>xercesImpl</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>xml-apis</groupId>
+                    <artifactId>xml-apis</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.2.131</version>
+        </dependency>
+    </dependencies>
 	<build>
 		<plugins>
-			<plugin>
+            <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.1-beta-1</version>
@@ -208,7 +380,7 @@
 					<configuration> <webXml>target/web.xml</webXml> </configuration>
 				-->
 			</plugin>
-			<plugin>
+            <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.1</version>
@@ -217,7 +389,7 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
-			<plugin>
+            <plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>aspectj-maven-plugin</artifactId>
 				<version>1.0</version>
@@ -254,7 +426,7 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
-			<plugin>
+            <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.5</version>
@@ -264,7 +436,7 @@
 					</excludes>
 				</configuration>
 			</plugin>
-			<plugin>
+            <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<version>2.2-beta-5</version>
@@ -274,13 +446,13 @@
 					</descriptorRefs>
 				</configuration>
 			</plugin>
-			<plugin>
+            <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-deploy-plugin</artifactId>
 				<version>2.5</version>
 			</plugin>
-			<!-- IDE -->
-			<plugin>
+            <!-- IDE -->
+            <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-eclipse-plugin</artifactId>
 				<version>2.7</version>  <!--  Note 2.8 does not work with AspectJ aspect path -->
@@ -306,7 +478,7 @@
 					</additionalProjectnatures>
 				</configuration>
 			</plugin>
-			<plugin>
+            <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-idea-plugin</artifactId>
 				<version>2.2</version>
@@ -315,7 +487,7 @@
 					<dependenciesAsLibraries>true</dependenciesAsLibraries>
 				</configuration>
 			</plugin>
-			<plugin>
+            <plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>tomcat-maven-plugin</artifactId>
 				<version>1.0</version>
@@ -323,11 +495,56 @@
 					<port>8888</port>
 				</configuration>
 			</plugin>
-			<plugin>
+            <plugin>
 				<groupId>org.mortbay.jetty</groupId>
 				<artifactId>maven-jetty-plugin</artifactId>
 				<version>6.1.22</version>
 			</plugin>
-		</plugins>
+        <plugin>
+                <groupId>org.datanucleus</groupId>
+                <artifactId>maven-datanucleus-plugin</artifactId>
+                <version>1.1.4</version>
+                <configuration>
+						<fork>false</fork>
+						<log4jConfiguration>${basedir}/src/main/resources/log4j.properties</log4jConfiguration>
+						<mappingIncludes>**/*.class</mappingIncludes>
+						<verbose>true</verbose>
+						<enhancerName>ASM</enhancerName>
+						<api>JPA</api>
+					</configuration>
+                <executions>
+                    <execution>
+                        <id/>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>enhance</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.datanucleus</groupId>
+                        <artifactId>datanucleus-core</artifactId>
+                        <version>${datanucleus.version}</version>
+                        <exclusions>
+                            <exclusion>
+                                <groupId>javax.transaction</groupId>
+                                <artifactId>transaction-api</artifactId>
+                            </exclusion>
+                        </exclusions>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.datanucleus</groupId>
+                        <artifactId>datanucleus-rdbms</artifactId>
+                        <version>${datanucleus.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.datanucleus</groupId>
+                        <artifactId>datanucleus-enhancer</artifactId>
+                        <version>1.1.4</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
 	</build>
 </project>
