@@ -3,14 +3,20 @@
  */
 package br.com.bufunfa.finance.ui.conta;
 
+import javax.faces.application.FacesMessage;
+import javax.faces.application.FacesMessage.Severity;
+import javax.faces.context.FacesContext;
+
 import org.primefaces.model.DefaultTreeNode;
 import org.primefaces.model.TreeNode;
+import org.springframework.roo.addon.serializable.RooSerializable;
 
 
 /**
  * @author camilo
  *
  */
+@RooSerializable
 public class TreeTableWidget {
 	
 	private TreeNode rootNode = new DefaultTreeNode("root", null);
@@ -99,6 +105,7 @@ public class TreeTableWidget {
 			
 			parentNode.getChildren().remove(deleteCandidate);
 			deleteCandidate.setParent(null);
+			addFacesMessage("Conta removida com sucesso", FacesMessage.SEVERITY_INFO);
 			
 		} else {
 			//nao se pode remover no nao folha
@@ -135,7 +142,7 @@ public class TreeTableWidget {
 	}
 	
 	/**
-	 * Mostra o formulario para alteracao
+	 * Mostra o formulario para edicao
 	 * de item na arvore de contas
 	 */
 	public void showEditItemForm() {
@@ -156,6 +163,19 @@ public class TreeTableWidget {
 			updateItem();
 		if(!isEditing())
 			addItem();
+		
+		addFacesMessage("Conta salva com sucesso", FacesMessage.SEVERITY_INFO);
+	}
+	
+	/**
+	 * Adiciona uma msg generica (nao atrelada a um componente)
+	 * ao faces context
+	 * @param msg a msg
+	 * @param severity severidade da msg
+	 */
+	void addFacesMessage(String msg, Severity severity) {
+		FacesMessage fmsg = new FacesMessage(severity, msg, msg);
+		FacesContext.getCurrentInstance().addMessage(null, fmsg);
 	}
 	
 

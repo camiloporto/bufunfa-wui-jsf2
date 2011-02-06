@@ -6,6 +6,8 @@ package br.com.bufunfa.finance.ui;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import org.springframework.roo.addon.serializable.RooSerializable;
+
 import br.com.bufunfa.finance.model.Usuario;
 
 /**
@@ -14,6 +16,7 @@ import br.com.bufunfa.finance.model.Usuario;
  */
 @ManagedBean(name="loginView")
 @SessionScoped
+@RooSerializable
 public class LoginView {
 	//FIXME Implementar logica de login (como um servico a parte??)
 	private final String USUARIO_VALIDO = "camiloporto";

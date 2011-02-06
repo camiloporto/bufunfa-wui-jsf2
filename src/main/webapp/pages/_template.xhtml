@@ -90,9 +90,37 @@
 		#footer {
 			clear: both;
 		}
+		
+		#contaTree tbody tr:hover { 
+			background: #FFB;
+		}
+		
+		.formContainer .label {
+			width: 100px;
+			padding-right: 3px;
+			text-align: right;
+		}
+		
+		.formContainer .parentLabel {
+			background-image: url("/finance/images/toggle-collapse-dark.png");
+			margin-left: -10px;
+			padding-left: 19px;
+			background-repeat: no-repeat;
+		}
+		.actionLink:link, .actionLink:visited {
+			font-size: 0.6em;
+			margin: 0 2px;
+			text-decoration: none;
+		}
+		.actionLink:hover, .actionLink:active {
+			text-decoration: underline;
+		}
+		
 	</style>
 </h:head>
 <h:body>
+<f:view contentType="text/html">
+
 	<div id="topo">
 		<div id="topo-inner">
 			<div id="topo-logo"><h1>Bufunfa.com</h1></div>
@@ -129,5 +157,19 @@
 			© 2011
 		</div>
 	</div>
+</f:view>
+<script type="text/javascript">
+	function toggleVisibility(el) {
+		// Colocar essa funcao pra ser ativada no onMouseOver/Out na linha da treetable.
+		// FAzer com que a troca da propriedade visible seja na Div das actions
+		if (el.style.visibility == "visible") {
+			el.style.visibility="hidden"; 
+		}
+		else {
+			   el.style.visibility = "visible";
+		}
+
+	}
+</script>
 </h:body>
 </html>

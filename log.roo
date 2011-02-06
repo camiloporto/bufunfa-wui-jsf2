@@ -18,3 +18,5 @@ field string --fieldName nome --notNull
 field string --fieldName email --notNull
 field string --fieldName senha --notNull
 // Spring Roo 1.1.0.M1 [rev 3a0b8a3] log opened at 2011-02-02 15:59:25
+// Spring Roo 1.1.0.M1 [rev 3a0b8a3] log opened at 2011-02-04 14:17:31
+// Spring Roo 1.1.0.M1 [rev 3a0b8a3] log opened at 2011-02-05 14:02:52

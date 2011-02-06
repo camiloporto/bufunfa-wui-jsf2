@@ -22,6 +22,8 @@ public class TreeTableItem {
 	private String descricaoConta;
 	
 	private TreeNode node;
+	
+	private boolean actionPanelVisible = true;
 
 	public TreeTableItem(String nomeConta, String descricaoConta) {
 		super();
@@ -50,6 +52,10 @@ public class TreeTableItem {
 			}
 		}
 		return false;
+	}
+	
+	public String getActionPanelVisibilityAttribute() {
+		return isActionPanelVisible() ? "visibility:visible" : "visibility:hidden";
 	}
 
 }

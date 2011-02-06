@@ -29,4 +29,12 @@ privileged aspect TreeTableItem_Roo_JavaBean {
         this.node = node;
     }
     
+    public boolean TreeTableItem.isActionPanelVisible() {
+        return this.actionPanelVisible;
+    }
+    
+    public void TreeTableItem.setActionPanelVisible(boolean actionPanelVisible) {
+        this.actionPanelVisible = actionPanelVisible;
+    }
+    
 }

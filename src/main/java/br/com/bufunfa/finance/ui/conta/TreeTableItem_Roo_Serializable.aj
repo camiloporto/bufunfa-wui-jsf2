@@ -6,6 +6,6 @@ privileged aspect TreeTableItem_Roo_Serializable {
     
     declare parents: TreeTableItem implements Serializable;
     
-    private static final long TreeTableItem.serialVersionUID = 4679140156694290089L;
+    private static final long TreeTableItem.serialVersionUID = 4799843876373845576L;
     
 }

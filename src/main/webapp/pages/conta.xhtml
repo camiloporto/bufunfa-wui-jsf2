@@ -6,25 +6,43 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.prime.com.tr/ui">
 <h:head>
-
 </h:head>
 <h:body>
 	<ui:composition template="_template.xhtml">
 		<ui:param name="pageTitle" value="Contas" />
 		<ui:define name="pageContent">
+			<p:growl id="statusDialog" showDetail="false"/>
 			<h:form id="contaForm" prependId="false">
+				
 				<p:dialog header="Informe os dados da conta:" id="contaDialog"
-					showEffect="bounce" hideEffect="explode" widgetVar="contaDataDialog">
+					widgetVar="contaDataDialog"
+					minWidth="420">
 					
-					<h:outputText value="#{contaView.treeTableWidget.selectedItem.nomeConta}" /><br/>
-					<h:outputText value="nome:" />
-					<h:inputText value="#{contaView.treeTableWidget.editingItem.nomeConta}" /><br/>
-					<h:outputText value="descricao:" />
-					<h:inputText value="#{contaView.treeTableWidget.editingItem.descricaoConta}" /><br/>
+					<div class="formContainer">
+						
+						<h:panelGroup styleClass="parentLabel" rendered="#{contaView.treeTableWidget.editing}">#{contaView.treeTableWidget.selectedItemParent.nomeConta}</h:panelGroup>
+						<h:panelGroup styleClass="parentLabel" rendered="#{not contaView.treeTableWidget.editing}">#{contaView.treeTableWidget.selectedItem.nomeConta}</h:panelGroup>
+						
+						<table>
+							<tbody>
+								<tr>
+									<td class="label"><label for="nomeConta">Nome:</label></td>
+									<td><h:inputText value="#{contaView.treeTableWidget.editingItem.nomeConta}" id="nomeConta"/></td>
+								</tr>
+								<tr>
+									<td class="label"><label for="descricaoConta">Descrição:</label></td>
+									<td><h:inputText value="#{contaView.treeTableWidget.editingItem.descricaoConta}" id="descricaoConta"/></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td><p:commandButton value="confirma" oncomplete="contaDataDialog.hide()" 
+											action="#{contaView.treeTableWidget.saveItem}" update="contaTree statusDialog" /></td>
+									
+								</tr>
+							</tbody>
+						</table>
+					</div>
 					
-					<p:commandButton value="confirma" oncomplete="contaDataDialog.hide()" 
-						action="#{contaView.treeTableWidget.saveItem}" update="contaTree" />
-					<p:commandButton value="cancela" oncomplete="contaDataDialog.hide()" />
 				</p:dialog>
 			
 				<p:treeTable value="#{contaView.treeTableWidget.rootNode}" var="item" id="contaTree">
@@ -44,32 +62,40 @@
 						<f:facet name="header">
 							Acao
 						</f:facet>
-						<h:panelGroup rendered="#{not item.firstLevel}">
-							<p:commandLink action="#{contaView.treeTableWidget.deleteItem}" 
-								value="[delete]" update="contaForm" rendered="#{item.leaf}">
-								<f:setPropertyActionListener 
-									target="#{contaView.treeTableWidget.selectedItem}" 
-									value="#{item}" />
-							</p:commandLink>
-							<p:commandLink oncomplete="contaDataDialog.show()"
-								value="[add]" type="button" update="contaDialog" action="#{contaView.treeTableWidget.showNewItemForm}">
-								<f:setPropertyActionListener 
-									target="#{contaView.treeTableWidget.selectedItem}" 
-									value="#{item}" />
-								<f:setPropertyActionListener 
-									target="#{contaView.treeTableWidget.editing}" 
-									value="false" />
-							</p:commandLink>
-							<p:commandLink oncomplete="contaDataDialog.show()"
-								value="[update]" type="button" update="contaDialog" action="#{contaView.treeTableWidget.showEditItemForm}">
-								<f:setPropertyActionListener 
-									target="#{contaView.treeTableWidget.selectedItem}" 
-									value="#{item}" />
-								<f:setPropertyActionListener 
-									target="#{contaView.treeTableWidget.editing}" 
-									value="true" />
-							</p:commandLink>
-						</h:panelGroup>
+						
+						<div onmouseover="toggleVisibility(this)" onmouseout="toggleVisibility(this)">
+							<h:panelGroup id="actionPanel">
+								<p:commandLink oncomplete="contaDataDialog.show()" styleClass="actionLink"
+									value="add" type="button" update="contaDialog" title="Nova conta"
+									action="#{contaView.treeTableWidget.showNewItemForm}">
+									<f:setPropertyActionListener 
+										target="#{contaView.treeTableWidget.selectedItem}" 
+										value="#{item}" />
+									<f:setPropertyActionListener 
+										target="#{contaView.treeTableWidget.editing}" 
+										value="false" />
+								</p:commandLink>
+								<p:commandLink oncomplete="contaDataDialog.show()" rendered="#{not item.firstLevel}"
+									value="edit" type="button" update="contaDialog" styleClass="actionLink"
+									action="#{contaView.treeTableWidget.showEditItemForm}" title="Editar conta">
+									<f:setPropertyActionListener 
+										target="#{contaView.treeTableWidget.selectedItem}" 
+										value="#{item}" />
+									<f:setPropertyActionListener 
+										target="#{contaView.treeTableWidget.editing}" 
+										value="true" />
+								</p:commandLink>
+								<p:commandLink action="#{contaView.treeTableWidget.deleteItem}" styleClass="actionLink"
+									value="remove" update="contaForm statusDialog" 
+									rendered="#{(item.leaf) and (not item.firstLevel)}" title="Remover conta">
+									<f:setPropertyActionListener 
+										target="#{contaView.treeTableWidget.selectedItem}" 
+										value="#{item}" />
+								</p:commandLink>
+								
+							</h:panelGroup>
+						</div>
+						
 					</p:column>
 					
 				</p:treeTable>
