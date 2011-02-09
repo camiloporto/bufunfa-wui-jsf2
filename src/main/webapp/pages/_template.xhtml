@@ -15,7 +15,7 @@
 			clear: both;
 			margin: 0 auto;
 			background: #fff;
-			width: 1000px;
+			width: 85%;
 		}
 		#topo {
 			background: rgb(200, 200, 0);
@@ -23,7 +23,7 @@
 		}
 		#topo-inner {
 			position: relative;
-			width: 1000px;
+			width: 85%;
 			margin: 0 auto;
 		}
 		#topo-logo {
@@ -81,6 +81,7 @@
 			margin-left: 0px;
 			padding-bottom: 15px;
 			float: left;
+			width: 80%;
 		}
 		.tituloPagina {
 			border-bottom: dashed 1px rgb(200, 200, 0);
@@ -92,7 +93,7 @@
 		}
 		
 		#contaTree tbody tr:hover { 
-			background: #FFB;
+			background: #FFf9C4;
 		}
 		
 		.formContainer .label {
@@ -114,6 +115,17 @@
 		}
 		.actionLink:hover, .actionLink:active {
 			text-decoration: underline;
+		}
+		.treeLabelConta {
+			display: inline;
+		}
+		.treeDescricaoConta {
+			display: inline-block;
+			font-size: 1em;
+			font-style: italic;
+			color: SlateGray;
+			margin-left: 25px;
+			width: 80%;
 		}
 		
 	</style>
@@ -159,11 +171,13 @@
 	</div>
 </f:view>
 <script type="text/javascript">
-	function toggleVisibility(el) {
+	function toggleVisibility(outDiv) {
+		divs = outDiv.getElementsByTagName("div");
+		el = divs[2];
 		// Colocar essa funcao pra ser ativada no onMouseOver/Out na linha da treetable.
 		// FAzer com que a troca da propriedade visible seja na Div das actions
 		if (el.style.visibility == "visible") {
-			el.style.visibility="hidden"; 
+			el.style.visibility="hidden";
 		}
 		else {
 			   el.style.visibility = "visible";
