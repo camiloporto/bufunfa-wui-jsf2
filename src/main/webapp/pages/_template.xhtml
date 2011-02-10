@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.prime.com.tr/ui">
 <h:head>
 	<title>Bufunfa.com</title>
 	<style type="text/css">
@@ -92,6 +93,7 @@
 			clear: both;
 		}
 		
+		/******** INICIO DO CSS DA TELA DE CONTA **/
 		#contaTree tbody tr:hover { 
 			background: #FFf9C4;
 		}
@@ -127,12 +129,19 @@
 			margin-left: 25px;
 			width: 80%;
 		}
+		/******** FIM DO CSS DA TELA DE CONTA **/
+		
+		/******** INICIO DO CSS DA TELA DE TRANSACOES **/
+		
+		
+		
+		/******** FIM DO CSS DA TELA DE TRANSACOES **/
 		
 	</style>
 </h:head>
 <h:body>
 <f:view contentType="text/html">
-
+	<p:growl id="statusDialog" showDetail="false"/>
 	<div id="topo">
 		<div id="topo-inner">
 			<div id="topo-logo"><h1>Bufunfa.com</h1></div>
@@ -146,15 +155,17 @@
 	<div id="container">
 		<div id="main">
 			<div id="main-esquerda">
+				<h:form prependId="false">
 				<div id="menu">
 					<ul>
-						<li><a href="#">Contas</a></li>
-						<li><a href="#">Menu 02</a></li>
+						<li><h:commandLink action="conta" value="Contas" /></li>
+						<li><h:commandLink action="transacao" value="Transações" /></li>
 						<li><a href="#">Menu 03</a></li>
 						<li><a href="#">Menu 04</a></li>
 						<li><a href="#">Menu 05</a></li>
 					</ul>
 				</div>
+				</h:form>
 			</div>
 			<div id="main-direita">
 				<ui:insert name="pageTitle">

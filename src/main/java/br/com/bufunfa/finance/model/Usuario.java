@@ -14,7 +14,13 @@ import javax.validation.constraints.NotNull;
 @RooSerializable
 public class Usuario {
 
-    @NotNull
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6580773588530057813L;
+
+	@NotNull
     private String nome;
 
     @NotNull

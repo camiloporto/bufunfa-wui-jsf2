@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.prime.com.tr/ui">
+<h:head>
+</h:head>
+<h:body>
+	<ui:composition template="_template.xhtml">
+		<ui:param name="pageTitle" value="Transações" />
+		<ui:define name="pageContent">
+			
+			<div id="transacaoAtalhoContainer">
+				<p>formulario de atalho para registro de transacoes</p>
+			</div>
+			<div id="transacaoFormContainer">
+				<h:form prependId="false" id="transacaoPadraoForm">
+				<table>
+					<tbody>
+						<tr>
+							<td class="label"><label for="contaOrigem">Origem:</label></td>
+							<td><h:inputText
+								value="#{transacaoView.transacaoEdit.contaOrigem}"
+								id="contaOrigem" /></td>
+							<td class="label"><label for="contaDestino">Destino:</label></td>
+							<td><h:inputText
+								value="#{transacaoView.transacaoEdit.contaDestino}"
+								id="contaDestino" /></td>
+						</tr>
+						<tr>
+							<td class="label"><label for="valor">Valor:</label></td>
+							<td><h:inputText
+								value="#{transacaoView.transacaoEdit.valor}"
+								id="valor" /></td>
+							<td class="label"><label for="data">Data:</label></td>
+							<td><p:calendar value="#{transacaoView.transacaoEdit.data}"
+								locale="#{transacaoView.locale}" 
+								pattern="dd/MM/yyyy"/></td>
+						</tr>
+						<tr>
+							<td class="label"><label for="descricao">Comentário:</label></td>
+							<td colspan="3"><h:inputText size="60"
+								value="#{transacaoView.transacaoEdit.comentario}"
+								id="descricao" /></td>
+							
+						</tr>
+						<tr>
+							<td></td>
+							<td><p:commandButton value="confirma"
+								action="#{transacaoView.addTransacaoPadrao}"
+								update="transacaoListForm transacaoPadraoForm" />
+							</td>
+
+						</tr>
+					</tbody>
+				</table>
+			</h:form>
+			</div>
+			
+			<div id="transacaoRegistroContainer">
+				<h:form prependId="false" id="transacaoListForm">
+					<p:dataTable value="#{transacaoView.transacaoList}" var="transacao">
+						<p:column>
+							<f:facet name="header">
+								<h:outputText value="Data" />
+							</f:facet>
+							<h:outputText value="#{transacao.data}">
+								<f:convertDateTime locale="#{transacaoView.locale}" dateStyle="short"/>
+							</h:outputText>
+						</p:column>
+						<p:column>
+							<f:facet name="header">
+								<h:outputText value="De" />
+							</f:facet>
+							<h:outputText value="#{transacao.contaOrigem}" />
+						</p:column>
+						<p:column>
+							<f:facet name="header">
+								<h:outputText value="Para" />
+							</f:facet>
+							<h:outputText value="#{transacao.contaDestino}" />
+						</p:column>
+						<p:column>
+							<f:facet name="header">
+								<h:outputText value="Comentario" />
+							</f:facet>
+							<h:outputText value="#{transacao.comentario}" />
+						</p:column>
+						<p:column width="20">
+							<f:facet name="header">
+								<h:outputText value="Valor" />
+							</f:facet>
+							<h:outputText value="#{transacao.valor}" >
+								<f:convertNumber locale="#{transacaoView.locale}" 
+										type="currency"/>
+							</h:outputText>
+						</p:column>
+					</p:dataTable>
+				</h:form>
+			</div>
+			
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

@@ -11,7 +11,7 @@
 	<ui:composition template="_template.xhtml">
 		<ui:param name="pageTitle" value="Contas" />
 		<ui:define name="pageContent">
-			<p:growl id="statusDialog" showDetail="false"/>
+			
 			<h:form id="contaForm" prependId="false">
 				
 				<p:dialog header="Informe os dados da conta:" id="contaDialog"
@@ -85,60 +85,6 @@
 						</div>
 						</div>
 					</p:column>
-					<!-- 
-					<p:column>
-						<f:facet name="header">
-							Nome
-						</f:facet>
-						<h:outputText value="#{item.nomeConta}" />
-					</p:column>
-					<p:column>
-						<f:facet name="header">
-							Descricao
-						</f:facet>
-						<h:outputText value="#{item.descricaoConta}" />
-					</p:column>
-					<p:column>
-						<f:facet name="header">
-							Acao
-						</f:facet>
-						
-						<div onmouseover="toggleVisibility(this)" onmouseout="toggleVisibility(this)">
-							<h:panelGroup id="actionPanel">
-								<p:commandLink oncomplete="contaDataDialog.show()" styleClass="actionLink"
-									value="add" type="button" update="contaDialog" title="Nova conta"
-									action="#{contaView.treeTableWidget.showNewItemForm}">
-									<f:setPropertyActionListener 
-										target="#{contaView.treeTableWidget.selectedItem}" 
-										value="#{item}" />
-									<f:setPropertyActionListener 
-										target="#{contaView.treeTableWidget.editing}" 
-										value="false" />
-								</p:commandLink>
-								<p:commandLink oncomplete="contaDataDialog.show()" rendered="#{not item.firstLevel}"
-									value="edit" type="button" update="contaDialog" styleClass="actionLink"
-									action="#{contaView.treeTableWidget.showEditItemForm}" title="Editar conta">
-									<f:setPropertyActionListener 
-										target="#{contaView.treeTableWidget.selectedItem}" 
-										value="#{item}" />
-									<f:setPropertyActionListener 
-										target="#{contaView.treeTableWidget.editing}" 
-										value="true" />
-								</p:commandLink>
-								<p:commandLink action="#{contaView.treeTableWidget.deleteItem}" styleClass="actionLink"
-									value="remove" update="contaForm statusDialog" 
-									rendered="#{(item.leaf) and (not item.firstLevel)}" title="Remover conta">
-									<f:setPropertyActionListener 
-										target="#{contaView.treeTableWidget.selectedItem}" 
-										value="#{item}" />
-								</p:commandLink>
-								
-							</h:panelGroup>
-						</div>
-						
-					</p:column>
-					 -->
-					
 				</p:treeTable>
 			</h:form>
 		</ui:define>
