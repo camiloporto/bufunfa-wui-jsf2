@@ -25,10 +25,7 @@ public class TransacaoItem {
 	 */
 	private static final long serialVersionUID = -1586288883354391713L;
 
-	//FIXME AJustar formulario da view aos atributos daqui.. formalizar tudo bunitim.. tirar strings e colocar tipos corretos
-	/**
-	 * implementar acao de adicionar transacao
-	 */
+	private Long idContaOrigem;
 	
 	private String contaOrigem;
 	

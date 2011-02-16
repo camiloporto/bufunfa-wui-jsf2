@@ -3,9 +3,13 @@
  */
 package br.com.bufunfa.finance.ui.conta;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import org.primefaces.model.TreeNode;
 import org.springframework.roo.addon.serializable.RooSerializable;
 
 /**
@@ -16,6 +20,11 @@ import org.springframework.roo.addon.serializable.RooSerializable;
 @SessionScoped
 @RooSerializable
 public class ContaView {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4111788223857609995L;
 	
 	private TreeTableWidget treeTableWidget = new TreeTableWidget();
 	
@@ -53,6 +62,35 @@ public class ContaView {
 
 	public void updateItem() {
 		treeTableWidget.updateItem();
+	}
+	
+	/**
+	 * 
+	 * @param name parte do nome da conta
+	 * @return
+	 */
+	public List<TreeTableItem> findItemsByNameLike(String name) {
+		List<TreeTableItem> itemsFound = new ArrayList<TreeTableItem>();
+		return findItemsByNameLike2(name, getTreeTableWidget().getRootNode(), itemsFound);
+	}
+	
+	private List<TreeTableItem> findItemsByNameLike2(String name, TreeNode root, List<TreeTableItem> result) {
+		if(root.isLeaf()) {
+			TreeTableItem item = (TreeTableItem) root.getData();
+			if(item == null)
+				return result;
+			if(item.getNomeConta().toLowerCase().contains(name.toLowerCase())) {
+				result.add(item);
+			}
+		} else {
+			List<TreeNode> children = root.getChildren();
+			for (TreeNode nextChild : children) {
+				result = findItemsByNameLike2(name, nextChild, result);
+			}
+		}
+		
+		return result;
+		
 	}
 	
 	

@@ -1,10 +1,19 @@
 package br.com.bufunfa.finance.ui.transacao;
 
 import java.lang.Double;
+import java.lang.Long;
 import java.lang.String;
 import java.util.Date;
 
 privileged aspect TransacaoItem_Roo_JavaBean {
+    
+    public Long TransacaoItem.getIdContaOrigem() {
+        return this.idContaOrigem;
+    }
+    
+    public void TransacaoItem.setIdContaOrigem(Long idContaOrigem) {
+        this.idContaOrigem = idContaOrigem;
+    }
     
     public String TransacaoItem.getContaOrigem() {
         return this.contaOrigem;

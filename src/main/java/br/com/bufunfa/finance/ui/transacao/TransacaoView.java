@@ -3,7 +3,6 @@
  */
 package br.com.bufunfa.finance.ui.transacao;
 
-import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -13,6 +12,8 @@ import javax.faces.bean.SessionScoped;
 
 import org.springframework.roo.addon.serializable.RooSerializable;
 
+import br.com.bufunfa.finance.ui.conta.TreeTableItem;
+
 /**
  * @author camilo
  *
@@ -21,6 +22,8 @@ import org.springframework.roo.addon.serializable.RooSerializable;
 @SessionScoped
 @RooSerializable
 public class TransacaoView {
+	
+	//TODO Fazer com que o Spring tome conta dos Beans. Injetar nesse Bean o Bean de ContaView
 	
 	/**
 	 * 
@@ -48,6 +51,18 @@ public class TransacaoView {
 	
 	public List<TransacaoItem> getTransacaoList() {
 		return transacaoList;
+	}
+	
+	public List<String> complete(String userInput) {
+		//FIXME Pesquisar por contas sugeridas na arvore de contas do Usuario. Considerar se a sugestao eh da Origem ou Destino
+		//FIXME Povoar lista com Objetos Contas e nao apenas com String
+		
+		List<String> result = new ArrayList<String>();
+		for(int i = 0; i < 10; i++) {
+			result.add(userInput + i);
+		}
+		
+		return result;
 	}
 	
 	/**

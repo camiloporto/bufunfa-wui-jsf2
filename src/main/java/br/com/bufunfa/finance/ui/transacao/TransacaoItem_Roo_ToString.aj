@@ -6,6 +6,7 @@ privileged aspect TransacaoItem_Roo_ToString {
     
     public String TransacaoItem.toString() {
         StringBuilder sb = new StringBuilder();
+        sb.append("IdContaOrigem: ").append(getIdContaOrigem()).append(", ");
         sb.append("ContaOrigem: ").append(getContaOrigem()).append(", ");
         sb.append("ContaDestino: ").append(getContaDestino()).append(", ");
         sb.append("Comentario: ").append(getComentario()).append(", ");

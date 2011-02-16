@@ -21,13 +21,15 @@
 					<tbody>
 						<tr>
 							<td class="label"><label for="contaOrigem">Origem:</label></td>
-							<td><h:inputText
-								value="#{transacaoView.transacaoEdit.contaOrigem}"
-								id="contaOrigem" /></td>
+							<td><p:autoComplete id="contaOrigem" value="#{transacaoView.transacaoEdit.contaOrigem}"
+								completeMethod="#{transacaoView.complete}"
+								minQueryLength="3"
+								forceSelection="true"/></td>
 							<td class="label"><label for="contaDestino">Destino:</label></td>
-							<td><h:inputText
-								value="#{transacaoView.transacaoEdit.contaDestino}"
-								id="contaDestino" /></td>
+							<td><p:autoComplete id="contaDestino" value="#{transacaoView.transacaoEdit.contaDestino}"
+								completeMethod="#{transacaoView.complete}"
+								minQueryLength="3"
+								forceSelection="true"/></td>
 						</tr>
 						<tr>
 							<td class="label"><label for="valor">Valor:</label></td>
