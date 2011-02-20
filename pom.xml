@@ -11,8 +11,8 @@
 		<spring.version>3.0.2.RELEASE</spring.version>
 		<aspectj.version>1.6.9.M2</aspectj.version>
 		<slf4j.version>1.6.0</slf4j.version>
-	<gae.version>1.3.4</gae.version>
-    <gae.home>${user.home}/.m2/repository/com/google/appengine/appengine-java-sdk/${gae.version}/appengine-java-sdk-${gae.version}</gae.home>
+	<gae.version>1.3.7</gae.version>
+    <gae.home>${user.home}/Documents/jar/appengine-java-sdk-${gae.version}</gae.home>
     <datanucleus.version>1.1.6</datanucleus.version>
     </properties>
 	<repositories>
@@ -202,6 +202,17 @@
         <!-- Spring dependencies -->
         <dependency>
 			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+        <dependency>
+			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
 			<version>${spring.version}</version>
 			<exclusions>
@@ -372,6 +383,15 @@
     </dependencies>
 	<build>
 		<plugins>
+			<!-- GAE Plugin -->
+			<plugin>
+				<groupId>net.kindleit</groupId>
+				<artifactId>maven-gae-plugin</artifactId>
+				<version>0.7.0</version>
+				<configuration>
+					<sdkDir>${gae.home}</sdkDir>
+				</configuration>			
+			</plugin>
             <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>

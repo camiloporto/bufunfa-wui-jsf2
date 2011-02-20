@@ -6,6 +6,6 @@ privileged aspect LoginView_Roo_Serializable {
     
     declare parents: LoginView implements Serializable;
     
-    private static final long LoginView.serialVersionUID = -6004855204433951726L;
+    private static final long LoginView.serialVersionUID = -3674917173525946009L;
     
 }

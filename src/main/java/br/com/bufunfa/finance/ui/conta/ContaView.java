@@ -6,18 +6,19 @@ package br.com.bufunfa.finance.ui.conta;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
-
 import org.primefaces.model.TreeNode;
+import org.springframework.context.annotation.Scope;
 import org.springframework.roo.addon.serializable.RooSerializable;
+import org.springframework.stereotype.Controller;
 
 /**
  * @author camilo
  *
  */
-@ManagedBean(name="contaView")
-@SessionScoped
+//@ManagedBean(name="contaView")
+//@SessionScoped
+@Controller(value="contaView")
+@Scope(value="Session")
 @RooSerializable
 public class ContaView {
 	
@@ -29,7 +30,6 @@ public class ContaView {
 	private TreeTableWidget treeTableWidget = new TreeTableWidget();
 	
 	public ContaView() {
-		
 	}
 	
 	public TreeTableWidget getTreeTableWidget() {

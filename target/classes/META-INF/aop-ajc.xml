@@ -1,0 +1,20 @@
+<aspectj>
+<aspects>
+<aspect name="br.com.bufunfa.finance.ui.conta.TreeTableWidget_Roo_Serializable"/>
+<aspect name="br.com.bufunfa.finance.model.Usuario_Roo_JavaBean"/>
+<aspect name="br.com.bufunfa.finance.ui.LoginView_Roo_Serializable"/>
+<aspect name="br.com.bufunfa.finance.ui.transacao.TransacaoItem_Roo_ToString"/>
+<aspect name="br.com.bufunfa.finance.ui.transacao.TransacaoItem_Roo_Serializable"/>
+<aspect name="br.com.bufunfa.finance.model.Usuario_Roo_Entity"/>
+<aspect name="br.com.bufunfa.finance.ui.conta.TreeTableItem_Roo_ToString"/>
+<aspect name="br.com.bufunfa.finance.ui.conta.TreeTableItem_Roo_JavaBean"/>
+<aspect name="br.com.bufunfa.finance.model.Usuario_Roo_Serializable"/>
+<aspect name="br.com.bufunfa.finance.model.Usuario_Roo_Configurable"/>
+<aspect name="br.com.bufunfa.finance.ui.transacao.TransacaoItem_Roo_JavaBean"/>
+<aspect name="br.com.bufunfa.finance.ui.conta.TreeTableItem_Roo_Serializable"/>
+<aspect name="br.com.bufunfa.finance.ui.transacao.TransacaoView_Roo_Serializable"/>
+<aspect name="br.com.bufunfa.finance.model.Usuario_Roo_ToString"/>
+<aspect name="br.com.bufunfa.finance.ui.conta.ContaView_Roo_Serializable"/>
+</aspects>
+</aspectj>
+

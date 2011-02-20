@@ -3,10 +3,9 @@
  */
 package br.com.bufunfa.finance.ui;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
-
+import org.springframework.context.annotation.Scope;
 import org.springframework.roo.addon.serializable.RooSerializable;
+import org.springframework.stereotype.Controller;
 
 import br.com.bufunfa.finance.model.Usuario;
 
@@ -14,8 +13,10 @@ import br.com.bufunfa.finance.model.Usuario;
  * @author camilo
  *
  */
-@ManagedBean(name="loginView")
-@SessionScoped
+//@ManagedBean(name="loginView")
+//@SessionScoped
+@Controller(value="loginView")
+@Scope(value="Session")
 @RooSerializable
 public class LoginView {
 	//FIXME Implementar logica de login (como um servico a parte??)
