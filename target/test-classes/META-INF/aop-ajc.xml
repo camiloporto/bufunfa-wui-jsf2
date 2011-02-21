@@ -1,9 +1,0 @@
-<aspectj>
-<aspects>
-<aspect name="br.com.bufunfa.finance.model.UsuarioIntegrationTest_Roo_IntegrationTest"/>
-<aspect name="br.com.bufunfa.finance.model.UsuarioDataOnDemand_Roo_DataOnDemand"/>
-<aspect name="br.com.bufunfa.finance.model.UsuarioDataOnDemand_Roo_Configurable"/>
-<aspect name="br.com.bufunfa.finance.model.UsuarioIntegrationTest_Roo_Configurable"/>
-</aspects>
-</aspectj>
-
