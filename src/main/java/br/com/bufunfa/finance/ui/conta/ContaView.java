@@ -63,6 +63,24 @@ public class ContaView {
 	}
 	
 	/**
+	 * Busca o item de conta pelo nome (ignorando case)
+	 * @param name nome da conta
+	 * @return o item. null se nao encontrar
+	 */
+	public TreeTableItem findItemByName(String name) {
+		if(name == null) throw new IllegalArgumentException("param name is required");
+		List<TreeTableItem> singleResult = findItemsByNameLike(name);
+		for (TreeTableItem candidate : singleResult) {
+			if(candidate.getNomeConta().toLowerCase().equals(name.toLowerCase())) {
+				return candidate;
+			}
+		}
+		
+		return null;
+	}
+	
+	
+	/**
 	 * 
 	 * @param name parte do nome da conta
 	 * @return

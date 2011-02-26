@@ -12,11 +12,18 @@ import org.springframework.roo.addon.tostring.RooToString;
  * @author camilo
  *
  */
-@RooToString
+//@RooToString
 @RooJavaBean
 @RooSerializable
 public class TreeTableItem {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2519805200331802857L;
+	
+	//TODO adicionar Id da conta aqui
+
 	private String nomeConta;
 	
 	private String descricaoConta;

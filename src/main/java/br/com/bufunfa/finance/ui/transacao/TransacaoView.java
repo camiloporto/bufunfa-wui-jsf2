@@ -80,7 +80,10 @@ public class TransacaoView {
 	 * Adiciona uma transacao usando o formulario padrao
 	 */
 	public void addTransacaoPadrao() {
-		//FIXME adicionar transacao ao negocio
+		//FIXME adicionar transacao ao negocio. pegar id das contas para mandar para o negocio
+		TreeTableItem origem = contaView.findItemByName(getTransacaoEdit().getContaOrigem());
+		TreeTableItem destino = contaView.findItemByName(getTransacaoEdit().getContaDestino());
+
 		getTransacaoList().add(getTransacaoEdit());
 		clearTransacaoEdit();
 	}

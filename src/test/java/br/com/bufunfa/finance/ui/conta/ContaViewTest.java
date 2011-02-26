@@ -22,6 +22,37 @@ public class ContaViewTest {
 		
 	}
 	
+	/**
+	 * Testa a busca de Item de conta por nome
+	 * Deve retornar apenas um resultado
+	 */
+	@Test
+	public void testFindItemByNome() {
+		TreeTableItem ativo = template.findItemByName("ativos");
+		Assert.assertNotNull(ativo);
+		Assert.assertTrue("ativos".toLowerCase().equals(ativo.getNomeConta().toLowerCase()));
+		
+		//testa buscando uma conta em um nivel mais profundo
+		addConta(ativo, "filho do ativo", "o filho do ativo");
+		ativo = template.findItemByName("filho do ativo");
+		Assert.assertNotNull(ativo);
+		Assert.assertTrue("filho do ativo".toLowerCase().equals(ativo.getNomeConta().toLowerCase()));
+		
+		//o nome informado tem que ser exato ao nome da conta, exceto o case
+		ativo = template.findItemByName("ativ");
+		Assert.assertNull(ativo);
+		
+		//o nome informado deve ser obrigatorio
+		try {
+			ativo = template.findItemByName(null);
+			Assert.fail("nome eh obrigatorio");
+		} catch (IllegalArgumentException e) {
+		}
+		
+		
+		
+	}
+	
 	@Test
 	public void testFindItemsByNomeLike() {
 		List<TreeTableItem> result = new ArrayList<TreeTableItem>();
