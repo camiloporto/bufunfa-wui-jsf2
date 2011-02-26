@@ -45,7 +45,7 @@
 	-->
     <context:component-scan base-package="br.com.bufunfa.finance">
 		<context:exclude-filter expression=".*_Roo_.*" type="regex"/>
-		<context:exclude-filter expression="org.springframework.stereotype.Controller" type="annotation"/>
+<!--		<context:exclude-filter expression="org.springframework.stereotype.Controller" type="annotation"/>-->
 	</context:component-scan>
     <bean class="org.springframework.orm.jpa.JpaTransactionManager" id="transactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
@@ -54,4 +54,10 @@
 <bean class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" id="entityManagerFactory">
         <property name="persistenceUnitName" value="persistenceUnit"/>
     </bean>
+
+<!--     
+    <bean id="contaView" class="br.com.bufunfa.finance.ui.conta.ContaView" />
+    <bean id="loginView" class="br.com.bufunfa.finance.ui.LoginView" />
+    <bean id="transacaoView" class="br.com.bufunfa.finance.ui.transacao.TransacaoView" />
+ -->
 </beans>

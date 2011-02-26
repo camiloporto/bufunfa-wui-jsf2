@@ -7,20 +7,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.primefaces.model.TreeNode;
-import org.springframework.context.annotation.Scope;
 import org.springframework.roo.addon.serializable.RooSerializable;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Component;
 
 /**
  * @author camilo
  *
  */
-//@ManagedBean(name="contaView")
-//@SessionScoped
-@Controller(value="contaView")
-@Scope(value="Session")
+//@Component
 @RooSerializable
 public class ContaView {
+	
+	//FIXME Nao esta criando os Beans! Verificar
 	
 	/**
 	 * 

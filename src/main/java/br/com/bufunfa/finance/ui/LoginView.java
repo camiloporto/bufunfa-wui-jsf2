@@ -3,9 +3,7 @@
  */
 package br.com.bufunfa.finance.ui;
 
-import org.springframework.context.annotation.Scope;
 import org.springframework.roo.addon.serializable.RooSerializable;
-import org.springframework.stereotype.Controller;
 
 import br.com.bufunfa.finance.model.Usuario;
 
@@ -13,12 +11,14 @@ import br.com.bufunfa.finance.model.Usuario;
  * @author camilo
  *
  */
-//@ManagedBean(name="loginView")
-//@SessionScoped
-@Controller(value="loginView")
-@Scope(value="Session")
+//@Component("loginView")
+//@Controller
 @RooSerializable
 public class LoginView {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6264338977016965309L;
 	//FIXME Implementar logica de login (como um servico a parte??)
 	private final String USUARIO_VALIDO = "camiloporto";
 	private final String SENHA_VALIDA = "nunes";

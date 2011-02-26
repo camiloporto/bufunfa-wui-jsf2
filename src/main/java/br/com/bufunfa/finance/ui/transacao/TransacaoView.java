@@ -8,9 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
-import org.springframework.context.annotation.Scope;
 import org.springframework.roo.addon.serializable.RooSerializable;
-import org.springframework.stereotype.Controller;
 
 import br.com.bufunfa.finance.ui.conta.ContaView;
 import br.com.bufunfa.finance.ui.conta.TreeTableItem;
@@ -19,10 +17,7 @@ import br.com.bufunfa.finance.ui.conta.TreeTableItem;
  * @author camilo
  *
  */
-//@ManagedBean(name="transacaoView")
-//@SessionScoped
-@Controller(value="transacaoView")
-@Scope(value="Session")
+//@Component
 @RooSerializable
 public class TransacaoView {
 	
@@ -33,6 +28,7 @@ public class TransacaoView {
 	 */
 	private static final long serialVersionUID = -3764510014597231583L;
 	
+//	@Autowired
 	private ContaView contaView;
 	
 	private TransacaoItem transacaoEdit = new TransacaoItem();
@@ -45,6 +41,10 @@ public class TransacaoView {
 	
 	public TransacaoView() {
 		
+	}
+	
+	public void setContaView(ContaView contaView) {
+		this.contaView = contaView;
 	}
 	
 	public Locale getLocale() {
@@ -60,6 +60,7 @@ public class TransacaoView {
 	}
 	
 	public List<String> complete(String userInput) {
+		
 		//FIXME Pesquisar por contas sugeridas na arvore de contas do Usuario. Considerar se a sugestao eh da Origem ou Destino
 		//FIXME Povoar lista com Objetos Contas e nao apenas com String
 		
@@ -70,11 +71,9 @@ public class TransacaoView {
 		for (Iterator<TreeTableItem> iterator = items.iterator(); iterator.hasNext();) {
 			TreeTableItem i = iterator.next();
 			result.add(i.getNomeConta());
-			System.out.println("TransacaoView.complete()");
 		}
 		
 		return result;
-		
 	}
 	
 	/**

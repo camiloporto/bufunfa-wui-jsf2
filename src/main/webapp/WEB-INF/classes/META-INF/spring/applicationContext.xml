@@ -54,4 +54,11 @@
 <bean class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" id="entityManagerFactory">
         <property name="persistenceUnitName" value="persistenceUnit"/>
     </bean>
+    
+    <bean id="contaView" class="br.com.bufunfa.finance.ui.conta.ContaView" />
+    <bean id="loginView" class="br.com.bufunfa.finance.ui.LoginView"/>
+    <bean id="transacaoView" class="br.com.bufunfa.finance.ui.transacao.TransacaoView">
+    	<property name="contaView" ref="contaView" />
+    </bean>
+    
 </beans>
