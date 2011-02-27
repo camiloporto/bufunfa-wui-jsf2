@@ -6,7 +6,6 @@ package br.com.bufunfa.finance.ui.conta;
 import org.primefaces.model.TreeNode;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.serializable.RooSerializable;
-import org.springframework.roo.addon.tostring.RooToString;
 
 /**
  * @author camilo

@@ -13,7 +13,14 @@
 		<ui:define name="pageContent">
 			
 			<div id="transacaoAtalhoContainer">
-				<p>formulario de atalho para registro de transacoes</p>
+				<h:form prependId="false" id="transacaoShortForm">
+					<span>atalho: </span>
+					<p:autoComplete value="#{transacaoView.shortTransaction}" 
+						completeMethod="#{transacaoView.completeSuggestedTransaction}"
+						minQueryLength="5"
+						forceSelection="true">
+					</p:autoComplete>
+				</h:form>
 			</div>
 			<div id="transacaoFormContainer">
 				<h:form prependId="false" id="transacaoPadraoForm">

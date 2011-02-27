@@ -31,6 +31,8 @@ public class TransacaoView {
 //	@Autowired
 	private ContaView contaView;
 	
+	private String shortTransaction;
+	
 	private TransacaoItem transacaoEdit = new TransacaoItem();
 	
 	private List<TransacaoItem> transacaoList = new ArrayList<TransacaoItem>();
@@ -41,6 +43,14 @@ public class TransacaoView {
 	
 	public TransacaoView() {
 		
+	}
+	
+	public String getShortTransaction() {
+		return shortTransaction;
+	}
+	
+	public void setShortTransaction(String shortTransaction) {
+		this.shortTransaction = shortTransaction;
 	}
 	
 	public void setContaView(ContaView contaView) {
@@ -57,6 +67,27 @@ public class TransacaoView {
 	
 	public List<TransacaoItem> getTransacaoList() {
 		return transacaoList;
+	}
+	
+	/**
+	 * Sugere transacoes a partir das entrada do usuario no formulario
+	 * de atalho
+	 * @param input entrada do usuario
+	 * @return sugestao de transacao
+	 */
+	public List<String> completeSuggestedTransaction(String input) {
+		
+		//TODO Fazer um parser para criar templates de transacoes com base no que o usuario digitou
+		
+		String s1 = "De: Salario Petro; Para: Ativos; valor: R$12,00; data: 01/02/2011; comentario: transacao template";
+		String s2 = "De: Conta Origem; Para: Conta Destino; valor: R$32,00; data: 23/02/2011; comentario: outra transacao";
+		
+		List<String> suggestions = new ArrayList<String>();
+		suggestions.add(s1);
+		suggestions.add(s2);
+		
+		return suggestions;
+		
 	}
 	
 	public List<String> complete(String userInput) {

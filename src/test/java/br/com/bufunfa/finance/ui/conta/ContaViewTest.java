@@ -22,6 +22,10 @@ public class ContaViewTest {
 		
 	}
 	
+	public ContaView getContaViewTemplate() {
+		return template;
+	}
+	
 	/**
 	 * Testa a busca de Item de conta por nome
 	 * Deve retornar apenas um resultado

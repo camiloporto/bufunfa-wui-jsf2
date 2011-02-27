@@ -5795,3 +5795,254 @@ org.datanucleus.exceptions.ClassNotResolvedException: Class "org.apache.jsp.inde
 
 18:00:00,766 (main) INFO  [DataNucleus.Enhancer] - Updating class file "file:/home/camilo/Development/github/bufunfa/FinanceJSF2WUI/target/classes/br/com/bufunfa/finance/model/Usuario.class" with enhanced definition
 18:00:00,767 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=234 ms, enhance=55 ms, total=289 ms. Consult the log for full details
+19:08:57,531 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer : Using ClassEnhancer "ASM" for API "JDO"
+19:08:57,873 (main) INFO  [DataNucleus.Plugin] - Bundle "org.datanucleus" has an optional dependency to "org.eclipse.equinox.registry" but it cannot be resolved
+19:08:57,873 (main) INFO  [DataNucleus.Plugin] - Bundle "org.datanucleus" has an optional dependency to "org.eclipse.core.runtime" but it cannot be resolved
+19:08:57,992 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 1.1.4) : Enhancement of classes
+19:08:58,217 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario" has been specified with JPA annotations so using those.
+19:08:58,347 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario_Roo_Configurable" has no MetaData or annotations.
+19:08:58,348 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario_Roo_Entity" has no MetaData or annotations.
+19:08:58,353 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario_Roo_JavaBean" has no MetaData or annotations.
+19:08:58,354 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario_Roo_Serializable" has no MetaData or annotations.
+19:08:58,355 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario_Roo_ToString" has no MetaData or annotations.
+19:08:58,356 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.LoginView" has no MetaData or annotations.
+19:08:58,369 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.LoginView_Roo_Serializable" has no MetaData or annotations.
+19:08:58,371 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.ContaView" has no MetaData or annotations.
+19:08:58,372 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.ContaView_Roo_Serializable" has no MetaData or annotations.
+19:08:58,373 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.TreeTableItem" has no MetaData or annotations.
+19:08:58,390 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.TreeTableItem_Roo_JavaBean" has no MetaData or annotations.
+19:08:58,391 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.TreeTableItem_Roo_Serializable" has no MetaData or annotations.
+19:08:58,392 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.TreeTableWidget" has no MetaData or annotations.
+19:08:58,393 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.TreeTableWidget_Roo_Serializable" has no MetaData or annotations.
+19:08:58,410 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoItem" has no MetaData or annotations.
+19:08:58,411 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoItem_Roo_JavaBean" has no MetaData or annotations.
+19:08:58,412 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoItem_Roo_Serializable" has no MetaData or annotations.
+19:08:58,413 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoItem_Roo_ToString" has no MetaData or annotations.
+19:08:58,422 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoView" has no MetaData or annotations.
+19:08:58,423 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoView_Roo_Serializable" has no MetaData or annotations.
+19:08:58,424 (main) ERROR [DataNucleus.MetaData] - Class "org.apache.jsp.index_jsp" was not found in the CLASSPATH. Please check your specification and your CLASSPATH.
+org.datanucleus.exceptions.ClassNotResolvedException: Class "org.apache.jsp.index_jsp" was not found in the CLASSPATH. Please check your specification and your CLASSPATH.
+	at org.datanucleus.JDOClassLoaderResolver.classForName(JDOClassLoaderResolver.java:250)
+	at org.datanucleus.JDOClassLoaderResolver.classForName(JDOClassLoaderResolver.java:415)
+	at org.datanucleus.metadata.MetaDataManager.loadClasses(MetaDataManager.java:379)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.getFileMetadataForInput(DataNucleusEnhancer.java:743)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.enhance(DataNucleusEnhancer.java:545)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1252)
+
+19:08:58,560 (main) INFO  [DataNucleus.Enhancer] - Class "br.com.bufunfa.finance.model.Usuario" is already enhanced.
+19:08:58,560 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=455 ms, enhance=105 ms, total=560 ms. Consult the log for full details
+19:09:03,760 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer : Using ClassEnhancer "ASM" for API "JDO"
+19:09:04,078 (main) INFO  [DataNucleus.Plugin] - Bundle "org.datanucleus" has an optional dependency to "org.eclipse.equinox.registry" but it cannot be resolved
+19:09:04,078 (main) INFO  [DataNucleus.Plugin] - Bundle "org.datanucleus" has an optional dependency to "org.eclipse.core.runtime" but it cannot be resolved
+19:09:04,153 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 1.1.4) : Enhancement of classes
+19:09:04,304 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario" has been specified with JPA annotations so using those.
+19:09:04,367 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario_Roo_Configurable" has no MetaData or annotations.
+19:09:04,369 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario_Roo_Entity" has no MetaData or annotations.
+19:09:04,374 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario_Roo_JavaBean" has no MetaData or annotations.
+19:09:04,375 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario_Roo_Serializable" has no MetaData or annotations.
+19:09:04,376 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario_Roo_ToString" has no MetaData or annotations.
+19:09:04,377 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.LoginView" has no MetaData or annotations.
+19:09:04,382 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.LoginView_Roo_Serializable" has no MetaData or annotations.
+19:09:04,383 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.ContaView" has no MetaData or annotations.
+19:09:04,384 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.ContaView_Roo_Serializable" has no MetaData or annotations.
+19:09:04,385 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.TreeTableItem" has no MetaData or annotations.
+19:09:04,386 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.TreeTableItem_Roo_JavaBean" has no MetaData or annotations.
+19:09:04,387 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.TreeTableItem_Roo_Serializable" has no MetaData or annotations.
+19:09:04,388 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.TreeTableWidget" has no MetaData or annotations.
+19:09:04,389 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.TreeTableWidget_Roo_Serializable" has no MetaData or annotations.
+19:09:04,390 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoItem" has no MetaData or annotations.
+19:09:04,391 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoItem_Roo_JavaBean" has no MetaData or annotations.
+19:09:04,392 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoItem_Roo_Serializable" has no MetaData or annotations.
+19:09:04,393 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoItem_Roo_ToString" has no MetaData or annotations.
+19:09:04,394 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoView" has no MetaData or annotations.
+19:09:04,395 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoView_Roo_Serializable" has no MetaData or annotations.
+19:09:04,398 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.UsuarioDataOnDemand" has no MetaData or annotations.
+19:09:04,399 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.UsuarioDataOnDemand_Roo_Configurable" has no MetaData or annotations.
+19:09:04,400 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.UsuarioDataOnDemand_Roo_DataOnDemand" has no MetaData or annotations.
+19:09:04,411 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.UsuarioIntegrationTest" has no MetaData or annotations.
+19:09:04,411 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.UsuarioIntegrationTest_Roo_Configurable" has no MetaData or annotations.
+19:09:04,412 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.UsuarioIntegrationTest_Roo_IntegrationTest" has no MetaData or annotations.
+19:09:04,413 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.ContaViewTest" has no MetaData or annotations.
+19:09:04,414 (main) ERROR [DataNucleus.MetaData] - Class "org.apache.jsp.index_jsp" was not found in the CLASSPATH. Please check your specification and your CLASSPATH.
+org.datanucleus.exceptions.ClassNotResolvedException: Class "org.apache.jsp.index_jsp" was not found in the CLASSPATH. Please check your specification and your CLASSPATH.
+	at org.datanucleus.JDOClassLoaderResolver.classForName(JDOClassLoaderResolver.java:250)
+	at org.datanucleus.JDOClassLoaderResolver.classForName(JDOClassLoaderResolver.java:415)
+	at org.datanucleus.metadata.MetaDataManager.loadClasses(MetaDataManager.java:379)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.getFileMetadataForInput(DataNucleusEnhancer.java:743)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.enhance(DataNucleusEnhancer.java:545)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1252)
+
+19:09:04,480 (main) INFO  [DataNucleus.Enhancer] - Updating class file "file:/home/camilo/Development/github/bufunfa/FinanceJSF2WUI/target/classes/br/com/bufunfa/finance/model/Usuario.class" with enhanced definition
+19:09:04,481 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=254 ms, enhance=60 ms, total=314 ms. Consult the log for full details
+19:16:57,134 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer : Using ClassEnhancer "ASM" for API "JDO"
+19:16:57,718 (main) INFO  [DataNucleus.Plugin] - Bundle "org.datanucleus" has an optional dependency to "org.eclipse.equinox.registry" but it cannot be resolved
+19:16:57,718 (main) INFO  [DataNucleus.Plugin] - Bundle "org.datanucleus" has an optional dependency to "org.eclipse.core.runtime" but it cannot be resolved
+19:16:57,857 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 1.1.4) : Enhancement of classes
+19:16:58,166 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario" has been specified with JPA annotations so using those.
+19:16:58,275 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario_Roo_Configurable" has no MetaData or annotations.
+19:16:58,286 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario_Roo_Entity" has no MetaData or annotations.
+19:16:58,287 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario_Roo_JavaBean" has no MetaData or annotations.
+19:16:58,288 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario_Roo_Serializable" has no MetaData or annotations.
+19:16:58,289 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario_Roo_ToString" has no MetaData or annotations.
+19:16:58,294 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.LoginView" has no MetaData or annotations.
+19:16:58,295 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.LoginView_Roo_Serializable" has no MetaData or annotations.
+19:16:58,297 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.ContaView" has no MetaData or annotations.
+19:16:58,304 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.ContaView_Roo_Serializable" has no MetaData or annotations.
+19:16:58,305 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.TreeTableItem" has no MetaData or annotations.
+19:16:58,306 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.TreeTableItem_Roo_JavaBean" has no MetaData or annotations.
+19:16:58,307 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.TreeTableItem_Roo_Serializable" has no MetaData or annotations.
+19:16:58,308 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.TreeTableWidget" has no MetaData or annotations.
+19:16:58,309 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.TreeTableWidget_Roo_Serializable" has no MetaData or annotations.
+19:16:58,326 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoItem" has no MetaData or annotations.
+19:16:58,327 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoItem_Roo_JavaBean" has no MetaData or annotations.
+19:16:58,328 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoItem_Roo_Serializable" has no MetaData or annotations.
+19:16:58,329 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoItem_Roo_ToString" has no MetaData or annotations.
+19:16:58,336 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoView" has no MetaData or annotations.
+19:16:58,337 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoView_Roo_Serializable" has no MetaData or annotations.
+19:16:58,350 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.UsuarioDataOnDemand" has no MetaData or annotations.
+19:16:58,351 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.UsuarioDataOnDemand_Roo_Configurable" has no MetaData or annotations.
+19:16:58,359 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.UsuarioDataOnDemand_Roo_DataOnDemand" has no MetaData or annotations.
+19:16:58,382 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.UsuarioIntegrationTest" has no MetaData or annotations.
+19:16:58,383 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.UsuarioIntegrationTest_Roo_Configurable" has no MetaData or annotations.
+19:16:58,384 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.UsuarioIntegrationTest_Roo_IntegrationTest" has no MetaData or annotations.
+19:16:58,384 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.ContaViewTest" has no MetaData or annotations.
+19:16:58,385 (main) ERROR [DataNucleus.MetaData] - Class "org.apache.jsp.index_jsp" was not found in the CLASSPATH. Please check your specification and your CLASSPATH.
+org.datanucleus.exceptions.ClassNotResolvedException: Class "org.apache.jsp.index_jsp" was not found in the CLASSPATH. Please check your specification and your CLASSPATH.
+	at org.datanucleus.JDOClassLoaderResolver.classForName(JDOClassLoaderResolver.java:250)
+	at org.datanucleus.JDOClassLoaderResolver.classForName(JDOClassLoaderResolver.java:415)
+	at org.datanucleus.metadata.MetaDataManager.loadClasses(MetaDataManager.java:379)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.getFileMetadataForInput(DataNucleusEnhancer.java:743)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.enhance(DataNucleusEnhancer.java:545)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1252)
+
+19:16:58,591 (main) INFO  [DataNucleus.Enhancer] - Updating class file "file:/home/camilo/Development/github/bufunfa/FinanceJSF2WUI/target/classes/br/com/bufunfa/finance/model/Usuario.class" with enhanced definition
+19:16:58,591 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=561 ms, enhance=169 ms, total=730 ms. Consult the log for full details
+09:15:44,921 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer : Using ClassEnhancer "ASM" for API "JDO"
+09:15:45,447 (main) INFO  [DataNucleus.Plugin] - Bundle "org.datanucleus" has an optional dependency to "org.eclipse.equinox.registry" but it cannot be resolved
+09:15:45,447 (main) INFO  [DataNucleus.Plugin] - Bundle "org.datanucleus" has an optional dependency to "org.eclipse.core.runtime" but it cannot be resolved
+09:15:45,694 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 1.1.4) : Enhancement of classes
+09:15:46,019 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario" has been specified with JPA annotations so using those.
+09:15:46,222 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario_Roo_Configurable" has no MetaData or annotations.
+09:15:46,224 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario_Roo_Entity" has no MetaData or annotations.
+09:15:46,225 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario_Roo_JavaBean" has no MetaData or annotations.
+09:15:46,229 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario_Roo_Serializable" has no MetaData or annotations.
+09:15:46,230 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario_Roo_ToString" has no MetaData or annotations.
+09:15:46,232 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.LoginView" has no MetaData or annotations.
+09:15:46,233 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.LoginView_Roo_Serializable" has no MetaData or annotations.
+09:15:46,241 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.ContaView" has no MetaData or annotations.
+09:15:46,242 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.ContaView_Roo_Serializable" has no MetaData or annotations.
+09:15:46,243 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.TreeTableItem" has no MetaData or annotations.
+09:15:46,244 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.TreeTableItem_Roo_JavaBean" has no MetaData or annotations.
+09:15:46,245 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.TreeTableItem_Roo_Serializable" has no MetaData or annotations.
+09:15:46,269 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.TreeTableWidget" has no MetaData or annotations.
+09:15:46,274 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.TreeTableWidget_Roo_Serializable" has no MetaData or annotations.
+09:15:46,280 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoItem" has no MetaData or annotations.
+09:15:46,281 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoItem_Roo_JavaBean" has no MetaData or annotations.
+09:15:46,282 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoItem_Roo_Serializable" has no MetaData or annotations.
+09:15:46,283 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoItem_Roo_ToString" has no MetaData or annotations.
+09:15:46,283 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoParser" has no MetaData or annotations.
+09:15:46,305 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoView" has no MetaData or annotations.
+09:15:46,306 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoView_Roo_Serializable" has no MetaData or annotations.
+09:15:46,307 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.ContaViewTest" has no MetaData or annotations.
+09:15:46,308 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoParserTest" has no MetaData or annotations.
+09:15:46,309 (main) ERROR [DataNucleus.MetaData] - Class "org.apache.jsp.index_jsp" was not found in the CLASSPATH. Please check your specification and your CLASSPATH.
+org.datanucleus.exceptions.ClassNotResolvedException: Class "org.apache.jsp.index_jsp" was not found in the CLASSPATH. Please check your specification and your CLASSPATH.
+	at org.datanucleus.JDOClassLoaderResolver.classForName(JDOClassLoaderResolver.java:250)
+	at org.datanucleus.JDOClassLoaderResolver.classForName(JDOClassLoaderResolver.java:415)
+	at org.datanucleus.metadata.MetaDataManager.loadClasses(MetaDataManager.java:379)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.getFileMetadataForInput(DataNucleusEnhancer.java:743)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.enhance(DataNucleusEnhancer.java:545)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1252)
+
+09:15:46,560 (main) INFO  [DataNucleus.Enhancer] - Class "br.com.bufunfa.finance.model.Usuario" is already enhanced.
+09:15:46,562 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=645 ms, enhance=210 ms, total=855 ms. Consult the log for full details
+09:18:10,516 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer : Using ClassEnhancer "ASM" for API "JDO"
+09:18:10,725 (main) INFO  [DataNucleus.Plugin] - Bundle "org.datanucleus" has an optional dependency to "org.eclipse.equinox.registry" but it cannot be resolved
+09:18:10,725 (main) INFO  [DataNucleus.Plugin] - Bundle "org.datanucleus" has an optional dependency to "org.eclipse.core.runtime" but it cannot be resolved
+09:18:10,788 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 1.1.4) : Enhancement of classes
+09:18:10,891 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario" has been specified with JPA annotations so using those.
+09:18:10,933 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario_Roo_Configurable" has no MetaData or annotations.
+09:18:10,935 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario_Roo_Entity" has no MetaData or annotations.
+09:18:10,935 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario_Roo_JavaBean" has no MetaData or annotations.
+09:18:10,936 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario_Roo_Serializable" has no MetaData or annotations.
+09:18:10,937 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario_Roo_ToString" has no MetaData or annotations.
+09:18:10,939 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.LoginView" has no MetaData or annotations.
+09:18:10,940 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.LoginView_Roo_Serializable" has no MetaData or annotations.
+09:18:10,941 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.ContaView" has no MetaData or annotations.
+09:18:10,942 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.ContaView_Roo_Serializable" has no MetaData or annotations.
+09:18:10,943 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.TreeTableItem" has no MetaData or annotations.
+09:18:10,944 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.TreeTableItem_Roo_JavaBean" has no MetaData or annotations.
+09:18:10,945 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.TreeTableItem_Roo_Serializable" has no MetaData or annotations.
+09:18:10,946 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.TreeTableWidget" has no MetaData or annotations.
+09:18:10,947 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.TreeTableWidget_Roo_Serializable" has no MetaData or annotations.
+09:18:10,949 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoItem" has no MetaData or annotations.
+09:18:10,955 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoItem_Roo_JavaBean" has no MetaData or annotations.
+09:18:10,956 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoItem_Roo_Serializable" has no MetaData or annotations.
+09:18:10,956 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoItem_Roo_ToString" has no MetaData or annotations.
+09:18:10,957 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoParser" has no MetaData or annotations.
+09:18:10,958 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoView" has no MetaData or annotations.
+09:18:10,959 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoView_Roo_Serializable" has no MetaData or annotations.
+09:18:10,963 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.UsuarioDataOnDemand" has no MetaData or annotations.
+09:18:10,964 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.UsuarioDataOnDemand_Roo_Configurable" has no MetaData or annotations.
+09:18:10,975 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.UsuarioDataOnDemand_Roo_DataOnDemand" has no MetaData or annotations.
+09:18:10,988 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.UsuarioIntegrationTest" has no MetaData or annotations.
+09:18:10,988 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.UsuarioIntegrationTest_Roo_Configurable" has no MetaData or annotations.
+09:18:10,993 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.UsuarioIntegrationTest_Roo_IntegrationTest" has no MetaData or annotations.
+09:18:10,994 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.ContaViewTest" has no MetaData or annotations.
+09:18:10,995 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoParserTest" has no MetaData or annotations.
+09:18:10,996 (main) ERROR [DataNucleus.MetaData] - Class "org.apache.jsp.index_jsp" was not found in the CLASSPATH. Please check your specification and your CLASSPATH.
+org.datanucleus.exceptions.ClassNotResolvedException: Class "org.apache.jsp.index_jsp" was not found in the CLASSPATH. Please check your specification and your CLASSPATH.
+	at org.datanucleus.JDOClassLoaderResolver.classForName(JDOClassLoaderResolver.java:250)
+	at org.datanucleus.JDOClassLoaderResolver.classForName(JDOClassLoaderResolver.java:415)
+	at org.datanucleus.metadata.MetaDataManager.loadClasses(MetaDataManager.java:379)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.getFileMetadataForInput(DataNucleusEnhancer.java:743)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.enhance(DataNucleusEnhancer.java:545)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1252)
+
+09:18:11,094 (main) INFO  [DataNucleus.Enhancer] - Updating class file "file:/home/camilo/Development/github/bufunfa/FinanceJSF2WUI/target/classes/br/com/bufunfa/finance/model/Usuario.class" with enhanced definition
+09:18:11,094 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=220 ms, enhance=82 ms, total=302 ms. Consult the log for full details
+09:20:37,110 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer : Using ClassEnhancer "ASM" for API "JDO"
+09:20:37,789 (main) INFO  [DataNucleus.Plugin] - Bundle "org.datanucleus" has an optional dependency to "org.eclipse.equinox.registry" but it cannot be resolved
+09:20:37,789 (main) INFO  [DataNucleus.Plugin] - Bundle "org.datanucleus" has an optional dependency to "org.eclipse.core.runtime" but it cannot be resolved
+09:20:37,941 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 1.1.4) : Enhancement of classes
+09:20:38,191 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario" has been specified with JPA annotations so using those.
+09:20:38,318 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario_Roo_Configurable" has no MetaData or annotations.
+09:20:38,319 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario_Roo_Entity" has no MetaData or annotations.
+09:20:38,320 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario_Roo_JavaBean" has no MetaData or annotations.
+09:20:38,321 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario_Roo_Serializable" has no MetaData or annotations.
+09:20:38,323 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.Usuario_Roo_ToString" has no MetaData or annotations.
+09:20:38,325 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.LoginView" has no MetaData or annotations.
+09:20:38,326 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.LoginView_Roo_Serializable" has no MetaData or annotations.
+09:20:38,328 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.ContaView" has no MetaData or annotations.
+09:20:38,343 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.ContaView_Roo_Serializable" has no MetaData or annotations.
+09:20:38,344 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.TreeTableItem" has no MetaData or annotations.
+09:20:38,345 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.TreeTableItem_Roo_JavaBean" has no MetaData or annotations.
+09:20:38,346 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.TreeTableItem_Roo_Serializable" has no MetaData or annotations.
+09:20:38,347 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.TreeTableWidget" has no MetaData or annotations.
+09:20:38,348 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.TreeTableWidget_Roo_Serializable" has no MetaData or annotations.
+09:20:38,366 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoItem" has no MetaData or annotations.
+09:20:38,367 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoItem_Roo_JavaBean" has no MetaData or annotations.
+09:20:38,368 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoItem_Roo_Serializable" has no MetaData or annotations.
+09:20:38,381 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoItem_Roo_ToString" has no MetaData or annotations.
+09:20:38,382 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoParser" has no MetaData or annotations.
+09:20:38,383 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoView" has no MetaData or annotations.
+09:20:38,384 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoView_Roo_Serializable" has no MetaData or annotations.
+09:20:38,422 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.UsuarioDataOnDemand" has no MetaData or annotations.
+09:20:38,423 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.UsuarioDataOnDemand_Roo_Configurable" has no MetaData or annotations.
+09:20:38,430 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.UsuarioDataOnDemand_Roo_DataOnDemand" has no MetaData or annotations.
+09:20:38,455 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.UsuarioIntegrationTest" has no MetaData or annotations.
+09:20:38,456 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.UsuarioIntegrationTest_Roo_Configurable" has no MetaData or annotations.
+09:20:38,458 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.model.UsuarioIntegrationTest_Roo_IntegrationTest" has no MetaData or annotations.
+09:20:38,458 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.conta.ContaViewTest" has no MetaData or annotations.
+09:20:38,459 (main) INFO  [DataNucleus.MetaData] - Class "br.com.bufunfa.finance.ui.transacao.TransacaoParserTest" has no MetaData or annotations.
+09:20:38,460 (main) ERROR [DataNucleus.MetaData] - Class "org.apache.jsp.index_jsp" was not found in the CLASSPATH. Please check your specification and your CLASSPATH.
+org.datanucleus.exceptions.ClassNotResolvedException: Class "org.apache.jsp.index_jsp" was not found in the CLASSPATH. Please check your specification and your CLASSPATH.
+	at org.datanucleus.JDOClassLoaderResolver.classForName(JDOClassLoaderResolver.java:250)
+	at org.datanucleus.JDOClassLoaderResolver.classForName(JDOClassLoaderResolver.java:415)
+	at org.datanucleus.metadata.MetaDataManager.loadClasses(MetaDataManager.java:379)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.getFileMetadataForInput(DataNucleusEnhancer.java:743)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.enhance(DataNucleusEnhancer.java:545)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1252)
+
+09:20:38,611 (main) INFO  [DataNucleus.Enhancer] - Updating class file "file:/home/camilo/Development/github/bufunfa/FinanceJSF2WUI/target/classes/br/com/bufunfa/finance/model/Usuario.class" with enhanced definition
+09:20:38,612 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 1 classes. Timings : input=527 ms, enhance=134 ms, total=661 ms. Consult the log for full details
