@@ -59,7 +59,9 @@ public class TransacaoView {
 	 */
 	void addFacesMessage(String msg, Severity severity) {
 		FacesMessage fmsg = new FacesMessage(severity, msg, msg);
-		FacesContext.getCurrentInstance().addMessage(null, fmsg);
+		FacesContext ctx = FacesContext.getCurrentInstance();
+		if(ctx != null)
+			ctx.addMessage(null, fmsg);
 	}
 	
 	public TransacaoItem getTransacaoSelected() {

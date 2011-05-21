@@ -1,5 +1,6 @@
 #ITD do roo
-*.4j
+*.aj
+log.roo
 
 #Arquivos do eclipse
 .classpath
@@ -11,5 +12,5 @@ ajcore*.txt
 *.log
 
 #diretorio target do maven
-target/*
-bin/*
+target/
+bin/
