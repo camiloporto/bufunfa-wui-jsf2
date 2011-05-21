@@ -1,0 +1,15 @@
+#ITD do roo
+*.4j
+
+#Arquivos do eclipse
+.classpath
+.project
+.settings/*
+ajcore*.txt
+
+#logs diversos
+*.log
+
+#diretorio target do maven
+target/*
+bin/*
