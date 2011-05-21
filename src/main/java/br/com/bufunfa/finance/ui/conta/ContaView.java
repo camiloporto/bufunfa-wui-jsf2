@@ -8,7 +8,6 @@ import java.util.List;
 
 import org.primefaces.model.TreeNode;
 import org.springframework.roo.addon.serializable.RooSerializable;
-import org.springframework.stereotype.Component;
 
 /**
  * @author camilo
@@ -67,9 +66,9 @@ public class ContaView {
 	 * @param name nome da conta
 	 * @return o item. null se nao encontrar
 	 */
-	public TreeTableItem findItemByName(String name) {
+	public TreeTableItem findLeafItemByName(String name) {
 		if(name == null) throw new IllegalArgumentException("param name is required");
-		List<TreeTableItem> singleResult = findItemsByNameLike(name);
+		List<TreeTableItem> singleResult = findLeafItemsByNameLike(name);
 		for (TreeTableItem candidate : singleResult) {
 			if(candidate.getNomeConta().toLowerCase().equals(name.toLowerCase())) {
 				return candidate;
@@ -81,11 +80,11 @@ public class ContaView {
 	
 	
 	/**
-	 * 
+	 * Retorna contas folhas por um nome parcial
 	 * @param name parte do nome da conta
 	 * @return
 	 */
-	public List<TreeTableItem> findItemsByNameLike(String name) {
+	public List<TreeTableItem> findLeafItemsByNameLike(String name) {
 		List<TreeTableItem> itemsFound = new ArrayList<TreeTableItem>();
 		return findItemsByNameLike2(name, getTreeTableWidget().getRootNode(), itemsFound);
 	}

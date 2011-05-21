@@ -41,4 +41,65 @@ public class TransacaoItem {
 		
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((comentario == null) ? 0 : comentario.hashCode());
+		result = prime * result
+				+ ((contaDestino == null) ? 0 : contaDestino.hashCode());
+		result = prime * result
+				+ ((contaOrigem == null) ? 0 : contaOrigem.hashCode());
+		result = prime * result + ((data == null) ? 0 : data.hashCode());
+		result = prime * result
+				+ ((idContaOrigem == null) ? 0 : idContaOrigem.hashCode());
+		result = prime * result + ((valor == null) ? 0 : valor.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		TransacaoItem other = (TransacaoItem) obj;
+		if (comentario == null) {
+			if (other.comentario != null)
+				return false;
+		} else if (!comentario.equals(other.comentario))
+			return false;
+		if (contaDestino == null) {
+			if (other.contaDestino != null)
+				return false;
+		} else if (!contaDestino.equals(other.contaDestino))
+			return false;
+		if (contaOrigem == null) {
+			if (other.contaOrigem != null)
+				return false;
+		} else if (!contaOrigem.equals(other.contaOrigem))
+			return false;
+		if (data == null) {
+			if (other.data != null)
+				return false;
+		} else if (!data.equals(other.data))
+			return false;
+		if (idContaOrigem == null) {
+			if (other.idContaOrigem != null)
+				return false;
+		} else if (!idContaOrigem.equals(other.idContaOrigem))
+			return false;
+		if (valor == null) {
+			if (other.valor != null)
+				return false;
+		} else if (!valor.equals(other.valor))
+			return false;
+		return true;
+	}
+	
+	
+
 }

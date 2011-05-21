@@ -8,6 +8,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
+import javax.faces.application.FacesMessage;
+import javax.faces.application.FacesMessage.Severity;
+import javax.faces.context.FacesContext;
+
 import org.springframework.roo.addon.serializable.RooSerializable;
 
 import br.com.bufunfa.finance.ui.conta.ContaView;
@@ -35,6 +39,8 @@ public class TransacaoView {
 	
 	private TransacaoItem transacaoEdit = new TransacaoItem();
 	
+	private TransacaoItem transacaoSelected = new TransacaoItem();
+	
 	private List<TransacaoItem> transacaoList = new ArrayList<TransacaoItem>();
 	
 	//FIXME Internacionalizar isso
@@ -45,6 +51,29 @@ public class TransacaoView {
 		
 	}
 	
+	/**
+	 * Adiciona uma msg generica (nao atrelada a um componente)
+	 * ao faces context
+	 * @param msg a msg
+	 * @param severity severidade da msg
+	 */
+	void addFacesMessage(String msg, Severity severity) {
+		FacesMessage fmsg = new FacesMessage(severity, msg, msg);
+		FacesContext.getCurrentInstance().addMessage(null, fmsg);
+	}
+	
+	public TransacaoItem getTransacaoSelected() {
+		return transacaoSelected;
+	}
+
+
+
+	public void setTransacaoSelected(TransacaoItem transacaoSelected) {
+		this.transacaoSelected = transacaoSelected;
+	}
+
+
+
 	public String getShortTransaction() {
 		return shortTransaction;
 	}
@@ -69,6 +98,7 @@ public class TransacaoView {
 		return transacaoList;
 	}
 	
+	//FIXME Implementar futuramente esse componente
 	/**
 	 * Sugere transacoes a partir das entrada do usuario no formulario
 	 * de atalho
@@ -95,7 +125,7 @@ public class TransacaoView {
 		//FIXME Pesquisar por contas sugeridas na arvore de contas do Usuario. Considerar se a sugestao eh da Origem ou Destino
 		//FIXME Povoar lista com Objetos Contas e nao apenas com String
 		
-		List<TreeTableItem> items = contaView.findItemsByNameLike(userInput);
+		List<TreeTableItem> items = contaView.findLeafItemsByNameLike(userInput);
 		
 		
 		List<String> result = new ArrayList<String>();
@@ -112,15 +142,25 @@ public class TransacaoView {
 	 */
 	public void addTransacaoPadrao() {
 		//FIXME adicionar transacao ao negocio. pegar id das contas para mandar para o negocio
-		TreeTableItem origem = contaView.findItemByName(getTransacaoEdit().getContaOrigem());
-		TreeTableItem destino = contaView.findItemByName(getTransacaoEdit().getContaDestino());
+		TreeTableItem origem = contaView.findLeafItemByName(getTransacaoEdit().getContaOrigem());
+		TreeTableItem destino = contaView.findLeafItemByName(getTransacaoEdit().getContaDestino());
 
 		getTransacaoList().add(getTransacaoEdit());
 		clearTransacaoEdit();
+		addFacesMessage("Transação salva com sucesso", FacesMessage.SEVERITY_INFO);
 	}
 
 	private void clearTransacaoEdit() {
 		this.transacaoEdit = new TransacaoItem();
+		
+	}
+
+
+	public void removeTransacaoSelected() {
+		//FIXME invocar negocio para remover transacao
+		
+		getTransacaoList().remove(getTransacaoSelected());
+		addFacesMessage("Transação excluida com sucesso", FacesMessage.SEVERITY_INFO);
 		
 	}
 	

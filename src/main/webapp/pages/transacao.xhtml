@@ -12,16 +12,8 @@
 		<ui:param name="pageTitle" value="Transações" />
 		<ui:define name="pageContent">
 			
-			<div id="transacaoAtalhoContainer">
-				<h:form prependId="false" id="transacaoShortForm">
-					<span>atalho: </span>
-					<p:autoComplete value="#{transacaoView.shortTransaction}" 
-						completeMethod="#{transacaoView.completeSuggestedTransaction}"
-						minQueryLength="5"
-						forceSelection="true">
-					</p:autoComplete>
-				</h:form>
-			</div>
+			 
+						 
 			<div id="transacaoFormContainer">
 				<h:form prependId="false" id="transacaoPadraoForm">
 				<table>
@@ -59,7 +51,7 @@
 							<td></td>
 							<td><p:commandButton value="confirma"
 								action="#{transacaoView.addTransacaoPadrao}"
-								update="transacaoListForm transacaoPadraoForm" />
+								update="transacaoListForm transacaoPadraoForm statusDialog" />
 							</td>
 
 						</tr>
@@ -70,7 +62,23 @@
 			
 			<div id="transacaoRegistroContainer">
 				<h:form prependId="false" id="transacaoListForm">
+					<p:dialog header="Confirma exclusão da transação?" widgetVar="confirmDeleteDialogVar" id="confirmDeleteDialog">
+						<p:commandButton value="OK" oncomplete="confirmDeleteDialogVar.hide()" 
+							action="#{transacaoView.removeTransacaoSelected}" update="transacaoListForm statusDialog" />
+					</p:dialog>
+					
 					<p:dataTable value="#{transacaoView.transacaoList}" var="transacao">
+						<p:column>
+							<f:facet name="header">
+								<h:outputText value="Ações" />
+							</f:facet>
+							<p:commandLink value="delete" onclick="confirmDeleteDialogVar.show()"
+								title="Remover transação" type="button">
+								<f:setPropertyActionListener 
+									target="#{transacaoView.transacaoSelected}" 
+									value="#{transacao}" />
+							</p:commandLink>
+						</p:column>
 						<p:column>
 							<f:facet name="header">
 								<h:outputText value="Data" />

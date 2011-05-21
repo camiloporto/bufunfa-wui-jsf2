@@ -3,15 +3,23 @@
  */
 package br.com.bufunfa.finance.ui.transacao;
 
-import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
+
+import org.apache.log4j.Logger;
+
+import br.com.bufunfa.finance.ui.conta.ContaView;
+import br.com.bufunfa.finance.ui.conta.TreeTableItem;
 
 /**
  * @author camilo
  *
  */
 public class TransacaoParser {
+	
+	private static final Logger logger = Logger.getLogger(TransacaoParser.class);
 	
 	//FIXME Internacionalizar os tokens dessa classe (de, para - from, to..)
 	private final String _DE = "de";
@@ -23,9 +31,39 @@ public class TransacaoParser {
 	private final String _DATA = "data";
 	
 	private final String _COMENTARIO = "comentario";
+	
+	private ContaView contaView;
 
 	public TransacaoParser() {
 		
+	}
+	
+	public void setContaView(ContaView contaView) {
+		this.contaView = contaView;
+	}
+	
+	/**
+	 * Retorna uma lista de transacaoItem preenchidas
+	 * apenas com sugestos dos parametros pacialmente
+	 * fornecidos pelo usuario
+	 * @param userParcialInput
+	 * @return
+	 */
+	public List<TransacaoItem> getSuggestedTransaction(
+			String userParcialInput) {
+		
+		List<TransacaoItem> result = new ArrayList<TransacaoItem>();
+		TransacaoItem userTemplate = getTransactionFromTemplate(userParcialInput);
+		String nomeParcialContaOrigem = userTemplate.getContaOrigem();
+		List<TreeTableItem> sugestoesDeContaOrigem = contaView.findLeafItemsByNameLike(nomeParcialContaOrigem);
+		for (TreeTableItem proximaOrigem : sugestoesDeContaOrigem) {
+			TransacaoItem transacaoSugerida = new TransacaoItem();
+			transacaoSugerida.setContaOrigem(proximaOrigem.getNomeConta());
+			logger.info("sugerindo transacao: " + transacaoSugerida);
+			result.add(transacaoSugerida);
+		}
+		
+		return result;
 	}
 	
 	public TransacaoItem getTransactionFromTemplate(String transacaoBasica) {
@@ -83,13 +121,24 @@ public class TransacaoParser {
 	private TransacaoItem createTransactionTemplate(String contaOrigem,
 			String contaDestino, String valorStr, String dataStr,
 			String comentario) {
+		
+		logger.info("criando transacao: " + contaOrigem + " # " + contaDestino + " # " + valorStr + " # " + dataStr + " # " + comentario);
+		
 		TransacaoItem t = new TransacaoItem();
 		t.setComentario(comentario);
 		t.setContaOrigem(contaOrigem);
 		t.setContaDestino(contaDestino);
 		
-		Double valor = parseDouble(valorStr);
-		Date data = parseData(dataStr);
+		Double valor = null;
+		Date data = null;
+		
+		if(valorStr != null)
+			valor = parseDouble(valorStr);
+		
+		if(dataStr == null)
+			data = Calendar.getInstance().getTime();
+		else
+			data = parseData(dataStr);
 		
 		t.setData(data);
 		t.setValor(valor);
@@ -160,5 +209,7 @@ public class TransacaoParser {
 			return false;
 		return paramToken.toLowerCase().equals(paramName.toLowerCase().trim());
 	}
+
+	
 
 }
