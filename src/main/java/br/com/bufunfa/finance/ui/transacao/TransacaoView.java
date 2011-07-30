@@ -12,6 +12,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.application.FacesMessage.Severity;
 import javax.faces.context.FacesContext;
 
+import org.primefaces.event.RowEditEvent;
 import org.springframework.roo.addon.serializable.RooSerializable;
 
 import br.com.bufunfa.finance.ui.conta.ContaView;
@@ -48,6 +49,12 @@ public class TransacaoView {
 	private Locale locale = new Locale("pt", "BR");
 	
 	public TransacaoView() {
+		
+	}
+	
+	public void rowUpdated(RowEditEvent evt) {
+		//FIXME efetuar implementacao desse metodo. invocar update do negocio
+		addFacesMessage("Transacao Atualizada com Sucesso", FacesMessage.SEVERITY_INFO);
 		
 	}
 	
@@ -147,9 +154,23 @@ public class TransacaoView {
 		TreeTableItem origem = contaView.findLeafItemByName(getTransacaoEdit().getContaOrigem());
 		TreeTableItem destino = contaView.findLeafItemByName(getTransacaoEdit().getContaDestino());
 
-		getTransacaoList().add(getTransacaoEdit());
-		clearTransacaoEdit();
-		addFacesMessage("Transação salva com sucesso", FacesMessage.SEVERITY_INFO);
+		if(isTransacaoEditPreenchidaComCamposObrigatorios()) {
+			getTransacaoEdit().setId(System.currentTimeMillis());//retirar essa linha daqui. Id vai vir do banco
+			getTransacaoList().add(getTransacaoEdit());
+			clearTransacaoEdit();
+			addFacesMessage("Transação salva com sucesso", FacesMessage.SEVERITY_INFO);
+		} else {
+			clearTransacaoEdit();
+		}
+	}
+
+	
+	private boolean isTransacaoEditPreenchidaComCamposObrigatorios() {
+		boolean isOK = getTransacaoEdit().getContaDestino() != null && !"".equals(getTransacaoEdit().getContaDestino().trim());
+		isOK &= getTransacaoEdit().getContaOrigem() != null && !"".equals(getTransacaoEdit().getContaOrigem().trim());
+		isOK &= getTransacaoEdit().getValor() != null && getTransacaoEdit().getValor() != 0.0; 
+		
+		return isOK;
 	}
 
 	private void clearTransacaoEdit() {

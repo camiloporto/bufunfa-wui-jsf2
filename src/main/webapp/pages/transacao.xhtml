@@ -67,52 +67,99 @@
 							action="#{transacaoView.removeTransacaoSelected}" update="transacaoListForm statusDialog" />
 					</p:dialog>
 					
-					<p:dataTable value="#{transacaoView.transacaoList}" var="transacao">
-						<p:column>
-							<f:facet name="header">
-								<h:outputText value="Ações" />
-							</f:facet>
-							<p:commandLink value="delete" onclick="confirmDeleteDialogVar.show()"
-								title="Remover transação" type="button">
-								<f:setPropertyActionListener 
-									target="#{transacaoView.transacaoSelected}" 
-									value="#{transacao}" />
-							</p:commandLink>
+					<p:dataTable value="#{transacaoView.transacaoList}" var="transacao" id="transacaoTable" rowEditListener="#{transacaoView.rowUpdated}"
+						onRowEditUpdate="statusDialog">
+						
+						<p:column headerText="Data" width="100">
+							<p:cellEditor>
+								<f:facet name="output">
+									<span id="actionPanel" onmouseover="toggleVisibilityTransacao(this)" onmouseout="toggleVisibilityTransacao(this)">
+										<h:outputText value="#{transacao.data}">
+											<f:convertDateTime locale="#{transacaoView.locale}" dateStyle="short"/>
+										</h:outputText>
+									</span>
+								</f:facet>
+								<f:facet name="input">
+									<p:calendar value="#{transacao.data}" size="10"
+										locale="#{transacaoView.locale}" 
+										pattern="dd/MM/yyyy"/>
+								</f:facet>
+							</p:cellEditor>
 						</p:column>
-						<p:column>
-							<f:facet name="header">
-								<h:outputText value="Data" />
-							</f:facet>
-							<h:outputText value="#{transacao.data}">
-								<f:convertDateTime locale="#{transacaoView.locale}" dateStyle="short"/>
-							</h:outputText>
+						<p:column headerText="De">
+							<p:cellEditor>
+								<f:facet name="output">
+									<span id="actionPanel" onmouseover="toggleVisibilityTransacao(this)" onmouseout="toggleVisibilityTransacao(this)">
+										<h:outputText value="#{transacao.contaOrigem}" />
+									</span>
+								</f:facet>
+								<f:facet name="input">
+									<p:autoComplete value="#{transacao.contaOrigem}" size="20"
+										completeMethod="#{transacaoView.complete}"
+										minQueryLength="3"
+										forceSelection="true"/>
+								</f:facet>
+							</p:cellEditor>
 						</p:column>
-						<p:column>
-							<f:facet name="header">
-								<h:outputText value="De" />
-							</f:facet>
-							<h:outputText value="#{transacao.contaOrigem}" />
+						<p:column headerText="Para">
+							<p:cellEditor>
+								<f:facet name="output">
+									<span id="actionPanel" onmouseover="toggleVisibilityTransacao(this)" onmouseout="toggleVisibilityTransacao(this)">
+										<h:outputText value="#{transacao.contaDestino}" />
+									</span>
+								</f:facet>
+								<f:facet name="input">
+									<p:autoComplete value="#{transacao.contaDestino}" size="20"
+										completeMethod="#{transacaoView.complete}"
+										minQueryLength="3"
+										forceSelection="true"/>
+								</f:facet>
+							</p:cellEditor>
 						</p:column>
-						<p:column>
-							<f:facet name="header">
-								<h:outputText value="Para" />
-							</f:facet>
-							<h:outputText value="#{transacao.contaDestino}" />
+						<p:column headerText="Comentario">
+							<p:cellEditor>
+								<f:facet name="output">
+									<span id="actionPanel" onmouseover="toggleVisibilityTransacao(this)" onmouseout="toggleVisibilityTransacao(this)">
+										<h:outputText value="#{transacao.comentario}" />
+									</span>
+								</f:facet>
+								<f:facet name="input">
+									<h:inputText size="30"
+										value="#{transacao.comentario}"/>
+								</f:facet>
+							</p:cellEditor>
 						</p:column>
-						<p:column>
-							<f:facet name="header">
-								<h:outputText value="Comentario" />
-							</f:facet>
-							<h:outputText value="#{transacao.comentario}" />
+						<p:column headerText="Valor">
+							<p:cellEditor>
+								<f:facet name="output">
+									<span id="actionPanel" onmouseover="toggleVisibilityTransacao(this)" onmouseout="toggleVisibilityTransacao(this)">
+										<h:outputText value="#{transacao.valor}" >
+											<f:convertNumber locale="#{transacaoView.locale}" 
+													type="currency"/>
+										</h:outputText>
+									</span>
+								</f:facet>
+								<f:facet name="input">
+									<h:inputText
+										value="#{transacao.valor}" size="10"/>
+								</f:facet>
+							</p:cellEditor>
 						</p:column>
-						<p:column width="20">
-							<f:facet name="header">
-								<h:outputText value="Valor" />
-							</f:facet>
-							<h:outputText value="#{transacao.valor}" >
-								<f:convertNumber locale="#{transacaoView.locale}" 
-										type="currency"/>
-							</h:outputText>
+						<p:column width="70">
+							
+							<div onmouseover="toggleVisibilityTransacao(this)" onmouseout="toggleVisibilityTransacao(this)" style="display: inline; background-color: yellow">
+								<span id="actionPanel" style="visibility:hidden;">
+									<p:commandLink value="delete" onclick="confirmDeleteDialogVar.show()"
+										title="Remover transação" type="button">
+										<f:setPropertyActionListener 
+											target="#{transacaoView.transacaoSelected}" 
+											value="#{transacao}" />
+									</p:commandLink>
+									<p:rowEditor />
+								</span>
+							</div>
+						
+							
 						</p:column>
 					</p:dataTable>
 				</h:form>

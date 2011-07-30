@@ -3,6 +3,7 @@
  */
 package br.com.bufunfa.finance.ui.transacao;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import org.springframework.roo.addon.javabean.RooJavaBean;
@@ -25,6 +26,8 @@ public class TransacaoItem {
 	 */
 	private static final long serialVersionUID = -1586288883354391713L;
 
+	private Long id;
+	
 	private Long idContaOrigem;
 	
 	private String contaOrigem;
@@ -39,6 +42,12 @@ public class TransacaoItem {
 	
 	public TransacaoItem() {
 		
+	}
+	
+	public Date getData() {
+		if(this.data == null)
+			return Calendar.getInstance().getTime();
+		return this.data;
 	}
 
 	@Override

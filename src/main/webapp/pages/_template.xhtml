@@ -133,6 +133,9 @@
 		
 		/******** INICIO DO CSS DA TELA DE TRANSACOES **/
 		
+		#transacaoRegistroContainer table tbody tr:hover {
+			background: #FFf9C4;
+		}
 		
 		
 		/******** FIM DO CSS DA TELA DE TRANSACOES **/
@@ -192,6 +195,23 @@
 		}
 		else {
 			   el.style.visibility = "visible";
+		}
+
+	}
+	
+	function toggleVisibilityTransacao(src) {
+		TABLE_ACTION_CELL_INDEX = 5;
+		tableRow = src.parentElement.parentElement;
+		tableActionCell = tableRow.children[TABLE_ACTION_CELL_INDEX];
+		actionDiv = tableActionCell.children[0].children[0];
+// 		alert(PrimeFaces.widget.tabelaTransacao);
+		// Colocar essa funcao pra ser ativada no onMouseOver/Out na linha da treetable.
+		// FAzer com que a troca da propriedade visible seja na Div das actions
+		if (actionDiv.style.visibility == "visible") {
+			actionDiv.style.visibility="hidden";
+		}
+		else {
+			actionDiv.style.visibility = "visible";
 		}
 
 	}

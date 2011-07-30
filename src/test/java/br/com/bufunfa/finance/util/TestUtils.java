@@ -5,15 +5,14 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-import org.junit.Ignore;
+import junit.framework.Assert;
+
 import org.junit.Test;
 
 import br.com.bufunfa.finance.ui.conta.ContaView;
 import br.com.bufunfa.finance.ui.conta.TreeTableItem;
 import br.com.bufunfa.finance.ui.transacao.TransacaoItem;
 import br.com.bufunfa.finance.ui.transacao.TransacaoView;
-
-import junit.framework.Assert;
 
 public class TestUtils {
 	
@@ -31,6 +30,9 @@ public class TestUtils {
 	}
 	
 	public static void assertDateEquals(Date expected, Date actual) {
+		if((expected != null && actual == null) || (expected == null && actual != null))
+			Assert.fail("as datas esperadas e informadas não sao iguais. uma eh nula e outra nao");
+		
 		Calendar c1 = Calendar.getInstance();
 		c1.setTime(expected);
 		
@@ -97,6 +99,22 @@ public class TestUtils {
 		i.setValor(new BigDecimal("30.00").doubleValue());
 		
 		return i;
+	}
+
+	public static TransacaoItem criaTransacaoVazia() {
+		return criaTransacao("", "", null, 0.0);
+	}
+
+	public static TransacaoItem criaTransacao(String origem, String destino,
+			Date data, double valor) {
+		TransacaoItem t = new TransacaoItem();
+		t.setComentario("comentario");
+		t.setContaDestino(destino);
+		t.setContaOrigem(origem);
+		t.setData(data);
+		t.setValor(valor);
+		
+		return t;
 	}
 
 }
