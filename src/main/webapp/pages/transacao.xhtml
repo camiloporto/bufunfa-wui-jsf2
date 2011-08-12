@@ -6,6 +6,7 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.prime.com.tr/ui">
 <h:head>
+	
 </h:head>
 <h:body>
 	<ui:composition template="_template.xhtml">
@@ -147,8 +148,8 @@
 						</p:column>
 						<p:column width="70">
 							
-							<div onmouseover="toggleVisibilityTransacao(this)" onmouseout="toggleVisibilityTransacao(this)" style="display: inline; background-color: yellow">
-								<span id="actionPanel" style="visibility:hidden;">
+							<div>
+								<span id="actionPanel" style="display:none;">
 									<p:commandLink value="delete" onclick="confirmDeleteDialogVar.show()"
 										title="Remover transação" type="button">
 										<f:setPropertyActionListener 
@@ -167,5 +168,6 @@
 			
 		</ui:define>
 	</ui:composition>
+	
 </h:body>
 </html>
