@@ -147,16 +147,17 @@
 							</p:cellEditor>
 						</p:column>
 						<p:column width="70">
-							
-							<div>
+						
+							<div style="width: 80px" >
 								<span id="actionPanel" style="display:none;">
+									<p:rowEditor />
 									<p:commandLink value="delete" onclick="confirmDeleteDialogVar.show()"
 										title="Remover transação" type="button">
 										<f:setPropertyActionListener 
 											target="#{transacaoView.transacaoSelected}" 
 											value="#{transacao}" />
 									</p:commandLink>
-									<p:rowEditor />
+									
 								</span>
 							</div>
 						

@@ -191,14 +191,14 @@
 	</div>
 </f:view>
 <script type="text/javascript">
-	$("tr").hover(
+	$("#transacaoRegistroContainer table tbody tr").hover(
 		function(event){
 	   	  $(this).css("background-color","#FFf9C4");
-		  $(":last-child div > span", this).show();
+		  $(":last-child div > span", this).fadeIn();
 	   	},
 		function(event){
 	   	  $(this).css("background-color","");
-		  $(":last-child div > span", this).hide();
+		  $(":last-child div > span", this).fadeOut();
 	   	}
 	   );
 	
