@@ -5,10 +5,13 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.prime.com.tr/ui">
-<h:head>
-	
+<h:head>	
 </h:head>
 <h:body>
+	<script type="text/javascript">
+	window.onload = function(){ alert("welcome"); } 
+    </script>
+	 
 	<ui:composition template="_template.xhtml">
 		<ui:param name="pageTitle" value="Transações" />
 		<ui:define name="pageContent">
@@ -146,9 +149,9 @@
 								</f:facet>
 							</p:cellEditor>
 						</p:column>
-						<p:column width="70">
+						<p:column style="width: 100px;">
 						
-							<div style="width: 80px" >
+							<div style="width: 100px" >
 								<span id="actionPanel" style="display:none;">
 									<p:rowEditor />
 									<p:commandLink value="delete" onclick="confirmDeleteDialogVar.show()"
@@ -168,7 +171,7 @@
 			</div>
 			
 		</ui:define>
-	</ui:composition>
-	
+	</ui:composition>	
 </h:body>
+
 </html>
