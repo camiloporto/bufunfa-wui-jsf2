@@ -5,19 +5,15 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.prime.com.tr/ui">
-<h:head>	
+<h:head>
+	
 </h:head>
 <h:body>
-	<script type="text/javascript">
-	window.onload = function(){ alert("welcome"); } 
-    </script>
 	 
 	<ui:composition template="_template.xhtml">
 		<ui:param name="pageTitle" value="Transações" />
 		<ui:define name="pageContent">
 			
-			 
-						 
 			<div id="transacaoFormContainer">
 				<h:form prependId="false" id="transacaoPadraoForm">
 				<table>
@@ -71,103 +67,82 @@
 							action="#{transacaoView.removeTransacaoSelected}" update="transacaoListForm statusDialog" />
 					</p:dialog>
 					
+					
 					<p:dataTable value="#{transacaoView.transacaoList}" var="transacao" id="transacaoTable" rowEditListener="#{transacaoView.rowUpdated}"
-						onRowEditUpdate="statusDialog">
+						onRowEditUpdate="statusDialog" rowIndexVar="index">
 						
 						<p:column headerText="Data" width="100">
-							<p:cellEditor>
-								<f:facet name="output">
-									<span id="actionPanel" onmouseover="toggleVisibilityTransacao(this)" onmouseout="toggleVisibilityTransacao(this)">
-										<h:outputText value="#{transacao.data}">
-											<f:convertDateTime locale="#{transacaoView.locale}" dateStyle="short"/>
-										</h:outputText>
-									</span>
-								</f:facet>
-								<f:facet name="input">
-									<p:calendar value="#{transacao.data}" size="10"
-										locale="#{transacaoView.locale}" 
-										pattern="dd/MM/yyyy"/>
-								</f:facet>
-							</p:cellEditor>
+							<h:outputText value="#{transacao.data}"  rendered="#{!transacao.editMode}">
+								<f:convertDateTime locale="#{transacaoView.locale}" dateStyle="short"/>
+							</h:outputText>
+							<p:calendar value="#{transacao.data}" size="10"  rendered="#{transacao.editMode}"
+								locale="#{transacaoView.locale}" 
+								pattern="dd/MM/yyyy"/>
 						</p:column>
 						<p:column headerText="De">
-							<p:cellEditor>
-								<f:facet name="output">
-									<span id="actionPanel" onmouseover="toggleVisibilityTransacao(this)" onmouseout="toggleVisibilityTransacao(this)">
-										<h:outputText value="#{transacao.contaOrigem}" />
-									</span>
-								</f:facet>
-								<f:facet name="input">
-									<p:autoComplete value="#{transacao.contaOrigem}" size="20"
-										completeMethod="#{transacaoView.complete}"
-										minQueryLength="3"
-										forceSelection="true"/>
-								</f:facet>
-							</p:cellEditor>
+							<h:outputText value="#{transacao.contaOrigem}"  rendered="#{!transacao.editMode}"/>
+							<p:autoComplete value="#{transacao.contaOrigem}" size="20"  rendered="#{transacao.editMode}"
+								completeMethod="#{transacaoView.complete}"
+								minQueryLength="3"
+								forceSelection="true"/>
 						</p:column>
 						<p:column headerText="Para">
-							<p:cellEditor>
-								<f:facet name="output">
-									<span id="actionPanel" onmouseover="toggleVisibilityTransacao(this)" onmouseout="toggleVisibilityTransacao(this)">
-										<h:outputText value="#{transacao.contaDestino}" />
-									</span>
-								</f:facet>
-								<f:facet name="input">
-									<p:autoComplete value="#{transacao.contaDestino}" size="20"
-										completeMethod="#{transacaoView.complete}"
-										minQueryLength="3"
-										forceSelection="true"/>
-								</f:facet>
-							</p:cellEditor>
+							<h:outputText value="#{transacao.contaDestino}"  rendered="#{!transacao.editMode}"/>
+							<p:autoComplete value="#{transacao.contaDestino}" size="20"  rendered="#{transacao.editMode}"
+								completeMethod="#{transacaoView.complete}"
+								minQueryLength="3"
+								forceSelection="true"/>
 						</p:column>
 						<p:column headerText="Comentario">
-							<p:cellEditor>
-								<f:facet name="output">
-									<span id="actionPanel" onmouseover="toggleVisibilityTransacao(this)" onmouseout="toggleVisibilityTransacao(this)">
-										<h:outputText value="#{transacao.comentario}" />
-									</span>
-								</f:facet>
-								<f:facet name="input">
-									<h:inputText size="30"
-										value="#{transacao.comentario}"/>
-								</f:facet>
-							</p:cellEditor>
+							<h:outputText value="#{transacao.comentario}" rendered="#{!transacao.editMode}"/>
+							<h:inputText size="30"
+											value="#{transacao.comentario}" rendered="#{transacao.editMode}"/>
 						</p:column>
 						<p:column headerText="Valor">
-							<p:cellEditor>
-								<f:facet name="output">
-									<span id="actionPanel" onmouseover="toggleVisibilityTransacao(this)" onmouseout="toggleVisibilityTransacao(this)">
-										<h:outputText value="#{transacao.valor}" >
-											<f:convertNumber locale="#{transacaoView.locale}" 
+							<h:outputText value="#{transacao.valor}"  rendered="#{!transacao.editMode}">
+								<f:convertNumber locale="#{transacaoView.locale}" 
 													type="currency"/>
-										</h:outputText>
-									</span>
-								</f:facet>
-								<f:facet name="input">
-									<h:inputText
+							</h:outputText>
+							<h:inputText  rendered="#{transacao.editMode}"
 										value="#{transacao.valor}" size="10"/>
-								</f:facet>
-							</p:cellEditor>
 						</p:column>
 						<p:column style="width: 100px;">
 						
-							<div style="width: 100px" >
-								<span id="actionPanel" style="display:none;">
-									<p:rowEditor />
+							<div style="width: 100px; display:none;">
 									<p:commandLink value="delete" onclick="confirmDeleteDialogVar.show()"
 										title="Remover transação" type="button">
 										<f:setPropertyActionListener 
 											target="#{transacaoView.transacaoSelected}" 
 											value="#{transacao}" />
 									</p:commandLink>
-									
-								</span>
+									<p:commandLink value=" edit " update="@form" rendered="#{!transacao.editMode}">
+										<f:setPropertyActionListener 
+											target="#{transacao.editMode}" 
+											value="#{true}" />
+									</p:commandLink>
+									<p:commandLink value=" save " update="@form" rendered="#{transacao.editMode}"
+										action="#{transacaoView.saveRow}">
+										<f:setPropertyActionListener 
+											target="#{transacaoView.transacaoSelected}" 
+											value="#{transacao}" />
+									</p:commandLink>
 							</div>
 						
 							
 						</p:column>
 					</p:dataTable>
+					<script type="text/javascript">
+					jQuery("#transacaoRegistroContainer table tbody tr").hover(
+						function(event){
+						  jQuery(":last-child div", this).show();
+					   	},
+						function(event){
+						  jQuery(":last-child div", this).hide();
+					   	}
+					  );
+					</script>
 				</h:form>
+				
 			</div>
 			
 		</ui:define>

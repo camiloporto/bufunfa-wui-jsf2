@@ -40,6 +40,8 @@ public class TransacaoItem {
 	
 	private Double valor;
 	
+	private boolean editMode = false;
+	
 	public TransacaoItem() {
 		
 	}

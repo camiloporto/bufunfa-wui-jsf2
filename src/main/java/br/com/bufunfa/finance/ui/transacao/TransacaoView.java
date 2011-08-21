@@ -52,6 +52,11 @@ public class TransacaoView {
 		
 	}
 	
+	public void saveRow() {
+		getTransacaoSelected().setEditMode(false);
+	}
+	
+	
 	public void rowUpdated(RowEditEvent evt) {
 		//FIXME efetuar implementacao desse metodo. invocar update do negocio
 		addFacesMessage("Transacao Atualizada com Sucesso", FacesMessage.SEVERITY_INFO);
