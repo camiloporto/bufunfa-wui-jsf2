@@ -46,15 +46,13 @@
 					</h:panelGroup>
 				</p:dialog>
 				
-				<p:commandLink oncomplete="contaDataDialog.show()" value="opa pop" id="popup"></p:commandLink>
-				
 				<p:treeTable value="#{contaView.treeTableWidget.rootNode}" var="item" id="contaTree">
 					<p:column>
 						<div style="display: inline;">
 							
 							<div class="treeLabelConta"><h:outputText value="#{item.nomeConta}" /></div>
 							<div class="treeDescricaoConta"><h:outputText value="#{item.descricaoConta}" /></div>
-							<div style="display:none;">
+							<div style="visibility: hidden;">
 								
 								<h:panelGroup>
 									<p:commandLink oncomplete="contaDataDialog.show()" styleClass="actionLink"
@@ -91,10 +89,10 @@
 						<script type="text/javascript">
 							jQuery("#contaTree tbody tr").hover(
 								function(event){
-								  jQuery("div :last-child", this).show();
+								  jQuery("div :last-child", this).css('visibility','visible');
 							   	},
 								function(event){
-								  jQuery("div :last-child", this).hide();
+								  jQuery("div :last-child", this).css('visibility','hidden');
 							   	}
 							  );
 						</script>

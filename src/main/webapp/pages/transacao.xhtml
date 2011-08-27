@@ -34,7 +34,10 @@
 							<td class="label"><label for="valor">Valor:</label></td>
 							<td><h:inputText
 								value="#{transacaoView.transacaoEdit.valor}"
-								id="valor" /></td>
+								id="valor">
+									<f:convertNumber pattern="###.##" locale="pt_BR"/>
+								</h:inputText>
+							</td>
 							<td class="label"><label for="data">Data:</label></td>
 							<td><p:calendar value="#{transacaoView.transacaoEdit.data}"
 								locale="#{transacaoView.locale}" 
@@ -69,7 +72,7 @@
 					
 					
 					<p:dataTable value="#{transacaoView.transacaoList}" var="transacao" id="transacaoTable" rowEditListener="#{transacaoView.rowUpdated}"
-						onRowEditUpdate="statusDialog" rowIndexVar="index">
+						onRowEditUpdate="statusDialog" rowIndexVar="index" emptyMessage="Nenhuma transação encontrada">
 						
 						<p:column headerText="Data" width="100">
 							<h:outputText value="#{transacao.data}"  rendered="#{!transacao.editMode}">
@@ -110,18 +113,18 @@
 						
 							<div style="width: 100px; display:none;">
 									<p:commandLink value="delete" onclick="confirmDeleteDialogVar.show()"
-										title="Remover transação" type="button">
+										title="Remover transação" type="button" styleClass="actionLink">
 										<f:setPropertyActionListener 
 											target="#{transacaoView.transacaoSelected}" 
 											value="#{transacao}" />
 									</p:commandLink>
-									<p:commandLink value=" edit " update="@form" rendered="#{!transacao.editMode}">
+									<p:commandLink value=" edit " update="@form" rendered="#{!transacao.editMode}" styleClass="actionLink">
 										<f:setPropertyActionListener 
 											target="#{transacao.editMode}" 
 											value="#{true}" />
 									</p:commandLink>
 									<p:commandLink value=" save " update="@form" rendered="#{transacao.editMode}"
-										action="#{transacaoView.saveRow}">
+										action="#{transacaoView.saveRow}" styleClass="actionLink">
 										<f:setPropertyActionListener 
 											target="#{transacaoView.transacaoSelected}" 
 											value="#{transacao}" />

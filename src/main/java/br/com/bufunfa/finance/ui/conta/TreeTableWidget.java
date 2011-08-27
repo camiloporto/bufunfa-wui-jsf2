@@ -136,7 +136,6 @@ public class TreeTableWidget {
 	 * do novo item da arvore de contas
 	 */
 	public void showNewItemForm() {
-		
 		//limpa formulario a ser apresentado
 		this.editingItem = new TreeTableItem();
 	}
